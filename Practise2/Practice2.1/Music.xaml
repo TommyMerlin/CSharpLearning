@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Practice2._1.Music"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Practice2._1"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="300">
+    <Grid>
+        <StackPanel Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Images/music3.png" Width="20" Margin="0 0 5 0"/>
+                <TextBlock Text="夜空中最亮的星-逃跑乐队" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5 0 0">
+                <Button x:Name="btnbgm" Click="Btnbgm_Click" Width="30" Background="White" BorderBrush="White" Height="30" Margin="0 0 10 0">
+                    <Image x:Name="imgbgm" Source="Images/start2.png"/>
+                </Button>
+                <Button x:Name="btnbgmStop" Click="BtnbgmStop_Click" Width="30" Height="30" BorderBrush="White" Background="White">
+                    <Image Source="Images/stop2.png"/>
+                </Button>
+            </StackPanel>
+            <MediaElement x:Name="sound1" Source="Sounds/bgm1.mp3" Volume="{Binding ElementName=slider1,Path=Value}" LoadedBehavior="Pause"/>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <Image Source="Images/volume3.png" Width="20" Margin="0 0 10 0"/>
+                <Slider x:Name="slider1" Value="0.5" Minimum="0" Maximum="1" TickFrequency="0.01" IsSnapToTickEnabled="True" Width="200"/>
+                <TextBox x:Name="txtboxVolume" Text="{Binding ElementName=slider1,Path=Value}"
+                         Margin="5 0 0 0" Width="40" BorderBrush="White"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,3 @@
+C:\Users\7ommy\source\repos\Practise2\Music\obj\Debug\ctrlMusic.g.cs
+C:\Users\7ommy\source\repos\Practise2\Music\obj\Debug\Music_MarkupCompile.cache
+C:\Users\7ommy\source\repos\Practise2\Music\obj\Debug\Music_MarkupCompile.lref
