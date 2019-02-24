@@ -1,0 +1,13 @@
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\bin\Debug\ControlLibrary1.dll
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\bin\Debug\ControlLibrary1.pdb
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\ControlLibrary1.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\UserControl1.g.cs
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\ControlLibrary1_MarkupCompile.cache
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\ControlLibrary1_MarkupCompile.lref
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\UserControl1.baml
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\ControlLibrary1.g.resources
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\ControlLibrary1.Properties.Resources.resources
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\ControlLibrary1.csproj.GenerateResource.cache
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\ControlLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\ControlLibrary1.dll
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary1\obj\Debug\ControlLibrary1.pdb

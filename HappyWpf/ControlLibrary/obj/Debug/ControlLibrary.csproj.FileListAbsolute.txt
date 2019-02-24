@@ -1,0 +1,12 @@
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\bin\Debug\ControlLibrary.dll
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\bin\Debug\ControlLibrary.pdb
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\obj\Debug\SalaryCalulator.baml
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\obj\Debug\SalaryCalulator.g.cs
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\obj\Debug\ControlLibrary_MarkupCompile.cache
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\obj\Debug\ControlLibrary.g.resources
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\obj\Debug\ControlLibrary.Properties.Resources.resources
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\obj\Debug\ControlLibrary.csproj.GenerateResource.cache
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\obj\Debug\ControlLibrary.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\obj\Debug\ControlLibrary.dll
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\obj\Debug\ControlLibrary.pdb
+C:\Users\7ommy\source\repos\HappyWpf\ControlLibrary\obj\Debug\ControlLibrary.csprojAssemblyReference.cache
