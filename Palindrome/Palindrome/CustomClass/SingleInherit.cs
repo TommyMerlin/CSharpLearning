@@ -19,7 +19,14 @@ namespace Palindrome
         {
             get
             {
-                return $"{FirstName} {LastName}";
+                if(FirstName is string && LastName is string)
+                {
+                    return $"{FirstName} {LastName}";
+                }
+                else
+                {
+                    return "Format Error!";
+                }
             }
         }
     }
