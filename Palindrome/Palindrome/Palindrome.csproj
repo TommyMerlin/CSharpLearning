@@ -61,7 +61,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Palindrome.SingleInheritProgram</StartupObject>
+    <StartupObject>Palindrome.PloyProgram</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -81,6 +81,7 @@
     <Compile Include="CustomClass\Exception.cs" />
     <Compile Include="CustomClass\Inherit.cs" />
     <Compile Include="CustomClass\Out.cs" />
+    <Compile Include="CustomClass\Polymorphism.cs" />
     <Compile Include="CustomClass\SingleInherit.cs" />
     <Compile Include="CustomClass\StaticClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
