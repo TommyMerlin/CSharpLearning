@@ -1,0 +1,11 @@
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\bin\Debug\Palindrome.exe.config
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\bin\Debug\Palindrome.exe
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\bin\Debug\Palindrome.pdb
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\obj\Debug\Palindrome.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\obj\Debug\Palindrome.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\obj\Debug\Palindrome.exe
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\obj\Debug\Palindrome.pdb
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\bin\Debug\Palindrome.exe.manifest
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\bin\Debug\Palindrome.application
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\obj\Debug\Palindrome.exe.manifest
+C:\Users\7ommy\source\repos\Palindrome\Palindrome\obj\Debug\Palindrome.application
