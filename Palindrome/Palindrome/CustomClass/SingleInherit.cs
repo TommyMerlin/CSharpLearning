@@ -8,27 +8,19 @@ namespace Palindrome
 {
     public class ClassRoom
     {
-        public ClassRoom(string name)
-        {
-            Name = name;
-        }
-
-        public string Name { get; set; }
-        public virtual void GetName()
-        {
-            Console.WriteLine($"{Name}");
-        }
+        public virtual string Name { get; set; }
     }
 
     public class Student:ClassRoom
     {
-        public Student(string name) : base(name)
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public override string Name
         {
-        }
-
-        public override void GetName()
-        {
-            Console.WriteLine($"Student's name is {Name}");
+            get
+            {
+                return $"{FirstName} {LastName}";
+            }
         }
     }
 
@@ -36,8 +28,12 @@ namespace Palindrome
     {
         static void Main(string[] args)
         {
-            Student student = new Student("Tommy Merlin");
-            student.GetName();
+            Student student = new Student();
+            student.FirstName = "Tommy";
+            student.LastName = "Merlin";
+            Console.WriteLine(student.Name);
+
+            Console.Read();
         }
     }
 

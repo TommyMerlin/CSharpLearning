@@ -61,7 +61,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Palindrome.InheritProgram</StartupObject>
+    <StartupObject>Palindrome.SingleInheritProgram</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

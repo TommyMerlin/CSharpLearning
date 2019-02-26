@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Palindrome.exe.manifest" size="3423">
+    <dependentAssembly dependencyType="install" codebase="Palindrome.exe.manifest" size="3424">
       <assemblyIdentity name="Palindrome.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>thiAJSz0r28LfCSMKk9G7IGr5XbG4XoQ5RQr4vjGRg4=</dsig:DigestValue>
+        <dsig:DigestValue>8PlzYdgPVzlxcAWBNa2qvvhqOVyTyLgXNPkztPMiwac=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
