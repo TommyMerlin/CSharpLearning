@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstWPF", "MyFirstWPF\MyFirstWPF.csproj", "{624F74E4-0908-4C47-9041-518658575871}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7A85F9B6-B9BE-4AB0-833E-B0EFA0532872}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridGame", "GridGame\GridGame.csproj", "{CE5CA067-096D-464E-BDE1-85E80406ADFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu", "App1\Menu.csproj", "{3CAEEF79-A3E7-43D6-8004-AAFA9E33C7DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolbar", "Toolbar\Toolbar.csproj", "{AC222A1C-CD59-46E1-BCF7-32AFD66701A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{624F74E4-0908-4C47-9041-518658575871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624F74E4-0908-4C47-9041-518658575871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624F74E4-0908-4C47-9041-518658575871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624F74E4-0908-4C47-9041-518658575871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5CA067-096D-464E-BDE1-85E80406ADFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5CA067-096D-464E-BDE1-85E80406ADFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5CA067-096D-464E-BDE1-85E80406ADFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5CA067-096D-464E-BDE1-85E80406ADFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CAEEF79-A3E7-43D6-8004-AAFA9E33C7DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CAEEF79-A3E7-43D6-8004-AAFA9E33C7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CAEEF79-A3E7-43D6-8004-AAFA9E33C7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CAEEF79-A3E7-43D6-8004-AAFA9E33C7DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC222A1C-CD59-46E1-BCF7-32AFD66701A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC222A1C-CD59-46E1-BCF7-32AFD66701A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC222A1C-CD59-46E1-BCF7-32AFD66701A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC222A1C-CD59-46E1-BCF7-32AFD66701A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB50D755-E2B6-4F87-A1CF-00B9E7708A2E}
+	EndGlobalSection
+EndGlobal

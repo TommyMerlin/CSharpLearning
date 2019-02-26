@@ -1,0 +1,17 @@
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\bin\Debug\Toolbar.exe.config
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\bin\Debug\Toolbar.exe
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\bin\Debug\Toolbar.pdb
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\Toolbar.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\MainWindow.g.cs
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\App.g.cs
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\Toolbar_MarkupCompile.cache
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\Toolbar_MarkupCompile.lref
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\MainWindow.baml
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\Toolbar.g.resources
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\Toolbar.Properties.Resources.resources
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\Toolbar.csproj.GenerateResource.cache
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\Toolbar.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\Toolbar.exe
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\Toolbar.pdb
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\NewWindow.g.cs
+C:\Users\7ommy\source\repos\MyFirstWPF\Toolbar\obj\Debug\NewWindow.baml

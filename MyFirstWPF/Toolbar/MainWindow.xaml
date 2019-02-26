@@ -1,0 +1,38 @@
+﻿<Window x:Class="Toolbar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Toolbar"
+        mc:Ignorable="d"
+        Title="主程序" Height="450" Width="800" Icon="Icons/window.png" Cursor="Hand">
+    <Grid>
+        <StackPanel>
+            <Menu>
+                <MenuItem Header="文件"/>
+                <MenuItem Header="编辑"/>
+            </Menu>
+            <ToolBar Height="30">
+                <Button Click="Button_Click">
+                    <Image Source="Icons/newfile.png"/>
+                </Button>
+                <Button>
+                    <Image Source="Icons/del.png"/>
+                </Button>
+                <Button>
+                    <Image Source="Icons/edit.png"/>
+                </Button>
+                <Button>
+                    <Image Source="Icons/syn.png"/>
+                </Button>
+            </ToolBar>
+            <Grid>
+                <Label Name="lbname" Content="用户名："/>
+                <TextBox x:Name="txtboxname" Margin="50,0,549.815,35.345" Height="30"/>
+                <Label Name="lbpwd" Content="密码：" Margin="0 40 750 0"/>
+                <PasswordBox x:Name="pswboxpwd" Margin="50 40 550 0" Height="30"></PasswordBox>
+            </Grid>
+        </StackPanel>
+        
+    </Grid>
+</Window>

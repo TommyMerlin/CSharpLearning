@@ -1,0 +1,14 @@
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\bin\Debug\GridGame.exe.config
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\bin\Debug\GridGame.exe
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\bin\Debug\GridGame.pdb
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\MainWindow.g.cs
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\App.g.cs
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\GridGame_MarkupCompile.cache
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\GridGame_MarkupCompile.lref
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\MainWindow.baml
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\GridGame.g.resources
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\GridGame.Properties.Resources.resources
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\GridGame.csproj.GenerateResource.cache
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\GridGame.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\GridGame.exe
+C:\Users\7ommy\source\repos\MyFirstWPF\GridGame\obj\Debug\GridGame.pdb

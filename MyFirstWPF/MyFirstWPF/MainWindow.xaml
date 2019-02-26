@@ -1,0 +1,23 @@
+﻿<Window x:Class="MyFirstWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyFirstWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000" Loaded="Window_Loaded">
+    <Grid x:Name="grid1" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Button x:Name="button1" Width="60" Height="40" Background="NavajoWhite" HorizontalAlignment="Center" Click="Buttton1_Click"/>
+        <Button x:Name="button2" Width="80" Height="40" Margin="-363,-154,362.866,154.034">
+            <Button.Content>
+                <StackPanel>
+                    <Image Width="80" Height="20" Source="1.jpg"></Image>
+                    <TextBlock HorizontalAlignment="Center" Text="确定"></TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button x:Name="BTNNewWindow" Background="Azure" Content="打开一个新窗口" Margin="-77,-65,-47.655,0" VerticalAlignment="Top" FontSize="18" Height="27" Click="OpenNewWindow_Click" MouseEnter="OpenNewWindow_MouseEnter" MouseLeave="BTNNewWindow_MouseLeave"/>
+        <PasswordBox Margin="-295,158,160.504,-128.723" VerticalAlignment="Top" Height="20" Width="200"/>
+        <TextBlock HorizontalAlignment="Center" Name="TBVisi" Margin="21,82,20.345,-33.462" TextWrapping="Wrap" Text="可见" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
