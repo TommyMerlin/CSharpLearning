@@ -1,0 +1,7 @@
+C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\Interface\bin\Debug\Interface.exe.config
+C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\Interface\bin\Debug\Interface.exe
+C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\Interface\bin\Debug\Interface.pdb
+C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\Interface\obj\Debug\Interface.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\Interface\obj\Debug\Interface.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\Interface\obj\Debug\Interface.exe
+C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\Interface\obj\Debug\Interface.pdb
