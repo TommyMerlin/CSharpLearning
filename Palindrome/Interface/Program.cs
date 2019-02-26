@@ -45,7 +45,9 @@ namespace Interface
                 return new string[]
                 {
                     FirstaName,
-                    LastName
+                    LastName,
+                    Phone,
+                    Address
                 };
             }
         }
@@ -56,9 +58,7 @@ namespace Interface
             {
                 return new string[]
                 {
-                    "First Name","Last Name  ",
-                    "Phone      ",
-                    "Address                    "
+                    "First Name","Last Name","Phone","Address"
                 };
             }
         }
@@ -95,7 +95,30 @@ namespace Interface
     {
         public static void List(string[] headers,IListable[] items)
         {
-            int[] columnWidths = new int[4];
+            DisplayHeader(headers);
+            for(int count = 0; count < items.Length; count++)
+            {
+                string[] values = items[count].ColumnValues;
+                DisplayItemRow(values);
+            }
+        }
+
+        public static void DisplayItemRow(string[] values)
+        {
+            foreach(string value in values)
+            {
+                Console.Write($"{value,20}");
+            }
+            Console.WriteLine();
+        }
+
+        public static void DisplayHeader(string[] headers)
+        {
+            foreach(string header in headers)
+            {
+                Console.Write($"{header,20}");
+            }
+            Console.WriteLine();
         }
     }
 
@@ -109,6 +132,16 @@ namespace Interface
             contacts[2] = new Contact("Marry", "Doe", "234-454-2334", "BeiJing");
             contacts[3] = new Contact("Jane", "Wilson", "234-566-4355", "ShangHai");
 
+            Publication[] publications = new Publication[3]
+            {
+                new Publication("Hello Word","Martin Smith",2019),
+                new Publication("C# Programming","Sarah King",2000),
+                new Publication("Tommorw","Tom Cooper",1999)
+            };
+
+            ConsoleListControl.List(Contact.Headers,contacts);
+
+            Console.Read();
             
             
         }
