@@ -83,6 +83,7 @@
     <Compile Include="CustomClass\Out.cs" />
     <Compile Include="CustomClass\Polymorphism.cs" />
     <Compile Include="CustomClass\SingleInherit.cs" />
+    <Compile Include="CustomClass\SQLServer.cs" />
     <Compile Include="CustomClass\StaticClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
