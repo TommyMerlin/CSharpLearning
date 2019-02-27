@@ -18,6 +18,7 @@ namespace Palindrome
             string conStr = System.Configuration.ConfigurationManager.ConnectionStrings["connStr"].ConnectionString.ToString();
             conn = new SqlConnection(conStr);
             conn.Open();
+            conn.CreateCommand();
             string insert = "insert into node(id,x,y)values(23,23,23)";
             cmd = new SqlCommand(insert, conn);
             cmd.ExecuteNonQuery();
