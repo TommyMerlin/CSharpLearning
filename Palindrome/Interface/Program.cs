@@ -14,6 +14,11 @@ namespace Interface
         }
     }
 
+    interface IComparable
+    {
+        int CompareTo(object obj);
+    }
+
     public abstract class PdaItem
     {
         public PdaItem(string name)
@@ -23,7 +28,7 @@ namespace Interface
         public virtual string Name { get; set; }
     }
 
-    class Contact : PdaItem, IListable
+    class Contact : PdaItem, IListable, IComparable
     {
         public Contact(string firstaName, string lastName, string phone, string address):base(null)
         {
@@ -38,7 +43,7 @@ namespace Interface
         public string Phone { get; set; }
         public string Address { get; set; }
 
-        public  string[] ColumnValues
+        string[] IListable.ColumnValues
         {
             get
             {
@@ -50,6 +55,24 @@ namespace Interface
                     Address
                 };
             }
+        }
+        public string[] ColumnValues => new string[] { "Hello" };
+
+        public int CompareTo(object obj)
+        {
+            int result;
+            Contact contact = obj as Contact;
+            if (obj == null)
+            {
+                result = 1;
+            }
+            else if (obj.GetType() != typeof(Contact))
+            {
+                throw new ArgumentException("E");
+            }
+            else
+                result = 1;
+            return result;
         }
 
         public static string[] Headers
@@ -131,6 +154,7 @@ namespace Interface
             contacts[1] = new Contact("Dick", "Littleman", "555-123-4567", "NingBo");
             contacts[2] = new Contact("Marry", "Doe", "234-454-2334", "BeiJing");
             contacts[3] = new Contact("Jane", "Wilson", "234-566-4355", "ShangHai");
+            string[] values = ((IListable)contacts[1]).ColumnValues;
 
             Publication[] publications = new Publication[3]
             {
