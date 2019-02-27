@@ -61,7 +61,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Palindrome.PloyProgram</StartupObject>
+    <StartupObject>Palindrome.SQLServer</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -42,24 +42,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Palindrome.exe" size="12768">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Palindrome.exe" size="13280">
       <assemblyIdentity name="Palindrome" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BhLEUxEa2mGs1pKZGTFTWoKPzN8kWONT0MYjkbsWaEQ=</dsig:DigestValue>
+        <dsig:DigestValue>H4cgDfguc3nQPM68GtzGT3Xp3q4H8GfyeUVtN7B1a18=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Palindrome.exe.config" size="344">
+  <file name="Palindrome.exe.config" size="364">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>B8BtNGW2E7ChjrcSIjLunJzBowMrJJm93v/g7WVpjNY=</dsig:DigestValue>
+      <dsig:DigestValue>fYmbGXErWlFoOUOGat8OhGRaSzM/fZn7zcpPRA15nRs=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
