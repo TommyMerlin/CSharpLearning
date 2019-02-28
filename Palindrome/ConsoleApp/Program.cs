@@ -30,7 +30,7 @@ namespace ConsoleApp
         /// </remarks>
         /// <param name="connecttionState">State of Connection</param>
         /// <date>January 28, 2019</date>
-        public void Operate(ConnecttionState connecttionState)
+        public void Operate(ConnecttionState connecttionState,string name)
         {
             switch (connecttionState)
             {

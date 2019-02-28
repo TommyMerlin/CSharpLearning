@@ -5,3 +5,4 @@ C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\ConsoleApp\obj\Debug\Conso
 C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\ConsoleApp\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
 C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\ConsoleApp\obj\Debug\ConsoleApp.exe
 C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\ConsoleApp\obj\Debug\ConsoleApp.pdb
+C:\Users\7ommy\source\repos\CSharpLearning\Palindrome\ConsoleApp\bin\Debug\ConsoleApp.xml
