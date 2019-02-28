@@ -48,6 +48,7 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             Console.WriteLine(1<<2);
+            Console.Beep(300, 2000);
 
             Console.Read();
         }
