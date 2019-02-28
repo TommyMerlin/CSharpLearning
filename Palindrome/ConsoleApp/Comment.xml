@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Program</name>
+    </assembly>
+    <members>
+        <member name="M:ConsoleApp.Enum.Operate(ConsoleApp.Enum.ConnecttionState)">
+            <summary>
+            Execute codes according to the condition.
+            </summary>
+            <remarks>
+            This method uses
+            <seealso cref="T:System.IO.FileStream"/>
+            in addition to
+            <seealso cref="T:System.IO.StreamWriter"/>
+            </remarks>
+            <param name="connecttionState">State of Connection</param>
+            <date>January 28, 2019</date>
+        </member>
+        <member name="T:ConsoleApp.Enum.ConnecttionState">
+            <summary>
+            连接状态
+            </summary>
+        </member>
+    </members>
+</doc>
