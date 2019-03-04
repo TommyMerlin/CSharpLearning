@@ -14,9 +14,7 @@ namespace ConsoleApp
     
     class Enum
     {
-        /// <summary>
-        /// 连接状态
-        /// </summary>
+        
         public enum ConnecttionState
         {
             Disconnected,
@@ -25,7 +23,16 @@ namespace ConsoleApp
             Disconnecting
         }
 
-        
+
+        // ********************************************************************************
+        /// <summary>
+        /// Operates the specified connecttion state.
+        /// </summary>
+        /// <param name="connecttionState">State of the connecttion.</param>
+        /// <param name="name">The name.</param>
+        /// <created>HuYe,2019/2/28</created>
+        /// <changed>HuYe,2019/2/28</changed>
+        // ********************************************************************************
         public void Operate(ConnecttionState connecttionState,string name)
         {
             switch (connecttionState)

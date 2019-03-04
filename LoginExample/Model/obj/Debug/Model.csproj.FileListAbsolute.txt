@@ -1,0 +1,6 @@
+C:\Users\7ommy\source\repos\CSharpLearning\LoginExample\Model\bin\Debug\Model.dll
+C:\Users\7ommy\source\repos\CSharpLearning\LoginExample\Model\bin\Debug\Model.pdb
+C:\Users\7ommy\source\repos\CSharpLearning\LoginExample\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\CSharpLearning\LoginExample\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\CSharpLearning\LoginExample\Model\obj\Debug\Model.dll
+C:\Users\7ommy\source\repos\CSharpLearning\LoginExample\Model\obj\Debug\Model.pdb
