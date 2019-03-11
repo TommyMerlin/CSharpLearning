@@ -101,19 +101,22 @@ namespace ConsoleApp1
             **/
 
             FileStream s1 = new FileStream(path,FileMode.OpenOrCreate);
-            TextWriter tw = new StreamWriter(s1);
+            //TextWriter tw = new StreamWriter(s1);
 
             
             //tw.Write("nHello World");
-            tw.WriteLine("Hello World");
-            tw.Write("Hello ");
-            tw.WriteLine("World");
-            tw.Write("C# Programming");
-            tw.Close();
+            
 
-            FileStream s2 = new FileStream(path, FileMode.OpenOrCreate);
-            TextReader tr = new StreamReader(s2);
-            Console.WriteLine(tr.ReadToEnd());
+            StreamWriter writer = new StreamWriter(s1);
+            writer.WriteLine("Hello World");
+            writer.Write("Hello ");
+            writer.WriteLine("World");
+            writer.Write("C# Programming");
+            writer.Close();
+
+            //FileStream s2 = new FileStream(path, FileMode.OpenOrCreate);
+            //TextReader tr = new StreamReader(s2);
+            //Console.WriteLine(tr.ReadToEnd());
 
 
             

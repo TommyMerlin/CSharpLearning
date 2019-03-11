@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Microsoft.Win32;
+using System.Windows.Forms;
 
 namespace FileOperation
 {
@@ -23,6 +26,22 @@ namespace FileOperation
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.ShowDialog();
+
+            DirectoryInfo info = new DirectoryInfo(fbd.SelectedPath);
+
+            FileSystemInfo[] fileSystemInfos = info.GetFileSystemInfos();
+
+            foreach(FileSystemInfo inf in fileSystemInfos)
+            {
+                lbFileName.Items.Add(inf.FullName);
+            }
+            txtboxPath.Text = fbd.SelectedPath;
         }
     }
 }

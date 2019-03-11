@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBox x:Name="txtboxPath" HorizontalAlignment="Left" Height="23" Margin="175,80,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="290"/>
+        <Button x:Name="btnOpenFile" Content="打开文件" Click="BtnOpenFile_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="490,84,0,0"/>
+        <ListBox x:Name="lbFileName" HorizontalAlignment="Left" Height="220" Margin="175,140,0,0" VerticalAlignment="Top" Width="250"/>
+
     </Grid>
 </Window>
