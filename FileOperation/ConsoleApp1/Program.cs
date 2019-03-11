@@ -12,7 +12,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             string path = @"F:\TestDir\MyTest.txt";
-            string target = @"F:\TestDir";
+            //string target = @"F:\TestDir";
 
             /**
             try
@@ -100,9 +100,23 @@ namespace ConsoleApp1
             Console.WriteLine(fileInfo.DirectoryName);
             **/
 
+            FileStream s1 = new FileStream(path,FileMode.OpenOrCreate);
+            TextWriter tw = new StreamWriter(s1);
+
+            
+            //tw.Write("nHello World");
+            tw.WriteLine("Hello World");
+            tw.Write("Hello ");
+            tw.WriteLine("World");
+            tw.Write("C# Programming");
+            tw.Close();
+
+            FileStream s2 = new FileStream(path, FileMode.OpenOrCreate);
+            TextReader tr = new StreamReader(s2);
+            Console.WriteLine(tr.ReadToEnd());
 
 
-
+            
             Console.Read();
         }
     }
