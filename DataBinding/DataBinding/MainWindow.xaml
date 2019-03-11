@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBinding"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="450" Width="500">
+    <Grid x:Name="gridMain">
+        <StackPanel Margin="50">
+            <Button x:Name="btn1" Content="{Binding Name}" Width="100" Height="40" Padding="5" Margin="10"/>
+            <Button x:Name="btn2" Content="{Binding Age}" Width="100" Height="40" Padding="5" Margin="10"/>
+            <Button x:Name="btn3" Content="{Binding Address}" Width="100" Height="40" Padding="5" Margin="10"/>
+            <Slider Width="200" Value="{Binding Num}" Margin="10" IsSnapToTickEnabled="True" Maximum="100"/>
+            <TextBox Width="150" Text="{Binding Num,UpdateSourceTrigger=PropertyChanged}" Margin="10"/>
+        </StackPanel>
     </Grid>
 </Window>

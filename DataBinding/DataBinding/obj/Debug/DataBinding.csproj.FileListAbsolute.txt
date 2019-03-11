@@ -1,0 +1,15 @@
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\bin\Debug\DataBinding.exe.config
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\bin\Debug\DataBinding.exe
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\bin\Debug\DataBinding.pdb
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\MainWindow.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\App.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding_MarkupCompile.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding_MarkupCompile.lref
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\MainWindow.baml
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.g.resources
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.Properties.Resources.resources
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.csproj.GenerateResource.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.exe
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.pdb
