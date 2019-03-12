@@ -52,7 +52,7 @@
         <StackPanel Grid.Column="1" Margin="10">
             <Slider Grid.Column="1" TickPlacement="BottomRight" TickFrequency="0.5" Margin="20 20 20 0"/>
             <ProgressBar IsIndeterminate="True" Margin="20 20 20 0" Height="8"/>
-            <Button x:Name="button1" Margin="10" Click="Button1_Click" Width="80">
+            <Button x:Name="button1" Margin="10" Click="Button1_Click" Width="80" Style="{DynamicResource MousrOverHighlightStyle}">
                 <StackPanel>
                     <Image Source="Images/apple2.png" Height="50"/>
                     <TextBlock Text="Button"/>

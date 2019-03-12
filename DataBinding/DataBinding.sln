@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBinding", "DataBinding\DataBinding.csproj", "{0D4739AB-1381-4BDB-A7C4-A90C22E1A727}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{7061577E-34CF-4686-B1AC-4339F0C3567D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0D4739AB-1381-4BDB-A7C4-A90C22E1A727}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D4739AB-1381-4BDB-A7C4-A90C22E1A727}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D4739AB-1381-4BDB-A7C4-A90C22E1A727}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7061577E-34CF-4686-B1AC-4339F0C3567D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7061577E-34CF-4686-B1AC-4339F0C3567D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7061577E-34CF-4686-B1AC-4339F0C3567D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7061577E-34CF-4686-B1AC-4339F0C3567D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

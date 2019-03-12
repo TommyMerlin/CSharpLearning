@@ -13,5 +13,6 @@ namespace DataBinding
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
