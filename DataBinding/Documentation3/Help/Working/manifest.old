@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topics>
+  <topic id="N:DataBinding" type="API" />
+  <topic id="T:DataBinding.App" type="API" />
+  <topic id="Methods.T:DataBinding.App" type="API" />
+  <topic id="Properties.T:DataBinding.App" type="API" />
+  <topic id="Events.T:DataBinding.App" type="API" />
+  <topic id="M:DataBinding.App.#ctor" type="API" />
+  <topic id="M:DataBinding.App.InitializeComponent" type="API" />
+  <topic id="M:DataBinding.App.Main" type="API" />
+  <topic id="T:DataBinding.Page1" type="API" />
+  <topic id="Methods.T:DataBinding.Page1" type="API" />
+  <topic id="Properties.T:DataBinding.Page1" type="API" />
+  <topic id="Events.T:DataBinding.Page1" type="API" />
+  <topic id="M:DataBinding.Page1.#ctor" type="API" />
+  <topic id="M:DataBinding.Page1.InitializeComponent" type="API" />
+  <topic id="T:DataBinding.Window1" type="API" />
+  <topic id="Methods.T:DataBinding.Window1" type="API" />
+  <topic id="Properties.T:DataBinding.Window1" type="API" />
+  <topic id="Events.T:DataBinding.Window1" type="API" />
+  <topic id="M:DataBinding.Window1.#ctor" type="API" />
+  <topic id="M:DataBinding.Window1.InitializeComponent" type="API" />
+  <topic id="N:DataBinding.Pages" type="API" />
+  <topic id="T:DataBinding.Pages.Page2" type="API" />
+  <topic id="Methods.T:DataBinding.Pages.Page2" type="API" />
+  <topic id="Properties.T:DataBinding.Pages.Page2" type="API" />
+  <topic id="Events.T:DataBinding.Pages.Page2" type="API" />
+  <topic id="M:DataBinding.Pages.Page2.#ctor" type="API" />
+  <topic id="M:DataBinding.Pages.Page2.InitializeComponent" type="API" />
+</topics>

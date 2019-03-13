@@ -11,31 +11,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Panuon.UI;
+using AutoCAD;
+using Microsoft.Win32;
+using System.Xml;
+using System.Data;
 
 namespace DataBinding
 {
     /// <summary>
     /// Window1.xaml 的交互逻辑
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Window1 : PUWindow
     {
-        public static readonly DependencyProperty OpenCommandProperty =
-    DependencyProperty.Register("OpenCommand", typeof(RoutedCommand), typeof(Window1), new PropertyMetadata(null));
-
-        public RoutedCommand OpenCommand
-        {
-            get { return (RoutedCommand)GetValue(OpenCommandProperty); }
-            set { SetValue(OpenCommandProperty, value); }
-        }
-
+        
+        /// <summary>
+        /// 窗口1
+        /// </summary>
         public Window1()
         {
             InitializeComponent();
+            TCPListener listener = new TCPListener();
+            
             //bind command
-            this.OpenCommand = new RoutedCommand();
-            var bin = new CommandBinding(this.OpenCommand);
-            bin.Executed += bin_Executed;
-            this.CommandBindings.Add(bin);
+            
         }
 
         void bin_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -48,6 +47,25 @@ namespace DataBinding
         {
             Button btn = sender as Button;
             frame1.Source = new Uri(btn.Tag.ToString(), UriKind.Relative);
+        }
+
+        private void PUButton_Click(object sender, RoutedEventArgs e)
+        {
+            PUMessageBox.ShowDialog("Hello");
+        }
+
+        private void Btn1_Click(object sender, RoutedEventArgs e)
+        {
+            
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();
+            string filepath = ofd.FileName;
+            AcadApplication app = new AcadApplication
+            {
+                Visible = true
+            };
+            AcadDocument doc = app.Documents.Open(filepath, null, null);
+            
         }
     }
 }

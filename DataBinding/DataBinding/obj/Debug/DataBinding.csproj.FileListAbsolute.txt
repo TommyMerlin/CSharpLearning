@@ -17,9 +17,13 @@ C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\Dat
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.csproj.CopyComplete
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.exe
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.pdb
-C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.csprojAssemblyReference.cache
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\App.baml
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\Pages\Page1.g.cs
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\Pages\Page1.baml
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\Pages\Page2.baml
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\Pages\Page2.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\Controls\FButton.baml
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\Themes\Generic.baml
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\Interop.AutoCAD.dll
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.csproj.ResolveComReference.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\bin\Debug\DataBinding.xml

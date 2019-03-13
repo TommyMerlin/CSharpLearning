@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DataBinding</name>
+  </assembly>
+  <members>
+    <member name="T:DataBinding.Pages.Page2">
+      <summary>
+            Page2.xaml 的交互逻辑
+            </summary>
+      <summary>
+            Page2
+            </summary>
+    </member>
+    <member name="M:DataBinding.Pages.Page2.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+    <member name="T:DataBinding.Window1">
+      <summary>
+            Window1.xaml 的交互逻辑
+            </summary>
+      <summary>
+            Window1
+            </summary>
+    </member>
+    <member name="M:DataBinding.Window1.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+    <member name="T:DataBinding.App">
+      <summary>
+            App.xaml 的交互逻辑
+            </summary>
+      <summary>
+            App
+            </summary>
+    </member>
+    <member name="M:DataBinding.App.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+    <member name="M:DataBinding.App.Main">
+      <summary>
+            Application Entry Point.
+            </summary>
+    </member>
+    <member name="T:DataBinding.Properties.Resources">
+      <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+    </member>
+    <member name="P:DataBinding.Properties.Resources.ResourceManager">
+      <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+    </member>
+    <member name="P:DataBinding.Properties.Resources.Culture">
+      <summary>
+              覆盖当前线程的 CurrentUICulture 属性
+              使用此强类型的资源类的资源查找。
+            </summary>
+    </member>
+    <member name="T:DataBinding.Page1">
+      <summary>
+            Page1
+            </summary>
+    </member>
+    <member name="M:DataBinding.Page1.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+    <member name="N:DataBinding">
+      <summary />
+    </member>
+    <member name="N:DataBinding.Pages">
+      <summary />
+    </member>
+  </members>
+</doc>

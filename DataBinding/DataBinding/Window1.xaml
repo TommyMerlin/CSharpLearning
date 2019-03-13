@@ -1,8 +1,10 @@
-﻿<Window x:Class="DataBinding.Window1"
+﻿<pu:PUWindow x:Class="DataBinding.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pu="clr-namespace:Panuon.UI;assembly=Panuon.UI"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Header="hello" AnimationStyle="Gradual"
         Title="Window1" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
@@ -21,9 +23,13 @@
                 <StackPanel Grid.Column="0">
                     <Button Tag="Pages/page1.xaml" Click="Button_Click">Page1</Button>
                     <Button Tag="Pages/page2.xaml" Click="Button_Click">Page2</Button>
+                    <ToggleButton Margin="10">Page3</ToggleButton>
+                    <pu:PUButton ButtonStyle="Hollow" Click="PUButton_Click" BorderThickness="2" Width="100" Padding="3">确定</pu:PUButton>
+                    <Button x:Name="btn1" Click="Btn1_Click">Click</Button>
                 </StackPanel>
+                <ContentControl/>
                 <Frame x:Name="frame1" Grid.Column="1" NavigationUIVisibility="Hidden" BorderBrush="LightBlue" BorderThickness="3"/>
             </Grid>
         </Border>
     </Grid>
-</Window>
+</pu:PUWindow>
