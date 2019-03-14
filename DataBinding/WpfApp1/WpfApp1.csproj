@@ -95,12 +95,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataBinding\DataBinding.csproj">
-      <Project>{0d4739ab-1381-4bdb-a7c4-a90c22e1a727}</Project>
-      <Name>DataBinding</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <COMReference Include="AutoCAD">
       <Guid>{644614D2-93DC-48C6-A061-21ABCE65A4C0}</Guid>
       <VersionMajor>1</VersionMajor>

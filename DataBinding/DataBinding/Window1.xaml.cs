@@ -31,7 +31,7 @@ namespace DataBinding
         public Window1()
         {
             InitializeComponent();
-            TCPListener listener = new TCPListener();
+            
             
             //bind command
             

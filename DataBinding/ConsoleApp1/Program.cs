@@ -78,24 +78,6 @@ namespace ConsoleApp1
             }
         }
 
-        public T[,] Add<T>(T[,] matrix1,T[,] matrix2)
-        {
-            if (matrix1.GetLength(1) != matrix2.GetLength(1) || matrix1.GetLength(0) != matrix2.GetLength(0))
-            {
-                return default(T[,]);
-            }
-            else
-            {
-                T[,] matrix = new T[matrix1.GetLength(0), matrix2.GetLength(1)];
-                for (int i = 0; i < matrix1.GetLength(0); i++)
-                {
-                    for (int j = 0; j < matrix2.GetLength(1); j++)
-                    {
-                        matrix[i, j] = matrix1[i, j] + matrix2[i, j];
-                    }
-                }
-                return matrix;
-            }
-        }
+        
     }
 }

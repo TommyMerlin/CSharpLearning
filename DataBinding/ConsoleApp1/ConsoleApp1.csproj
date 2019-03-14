@@ -45,9 +45,63 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocketService\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SocketService\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SocketService\obj\Debug\App.g.cs" />
+    <Compile Include="SocketService\obj\Debug\App.g.i.cs" />
+    <Compile Include="SocketService\obj\Debug\MainWindow.g.cs" />
+    <Compile Include="SocketService\obj\Debug\MainWindow.g.i.cs" />
+    <Compile Include="SocketService\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="SocketService\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="SocketService\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="SocketService\Properties\AssemblyInfo.cs" />
+    <Compile Include="SocketService\Properties\Resources.Designer.cs" />
+    <Compile Include="SocketService\Properties\Settings.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="SocketService\App.config" />
+    <None Include="SocketService\bin\Debug\SocketService.exe.config" />
+    <None Include="SocketService\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="SocketService\obj\Debug\MainWindow.baml" />
+    <None Include="SocketService\obj\Debug\SocketService.csproj.CoreCompileInputs.cache" />
+    <None Include="SocketService\obj\Debug\SocketService.csproj.GenerateResource.cache" />
+    <None Include="SocketService\obj\Debug\SocketService.csprojAssemblyReference.cache" />
+    <None Include="SocketService\obj\Debug\SocketService_MarkupCompile.cache" />
+    <None Include="SocketService\obj\Debug\SocketService_MarkupCompile.i.cache" />
+    <None Include="SocketService\obj\Debug\SocketService_MarkupCompile.i.lref" />
+    <None Include="SocketService\obj\Debug\SocketService_MarkupCompile.lref" />
+    <None Include="SocketService\Properties\Settings.settings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SocketService\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SocketService\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SocketService\bin\Debug\SocketService.exe" />
+    <Content Include="SocketService\bin\Debug\SocketService.pdb" />
+    <Content Include="SocketService\obj\Debug\SocketService.csproj.FileListAbsolute.txt" />
+    <Content Include="SocketService\obj\Debug\SocketService.exe" />
+    <Content Include="SocketService\obj\Debug\SocketService.pdb" />
+    <Content Include="SocketService\SocketService.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SocketService\obj\Debug\SocketService.g.resources" />
+    <EmbeddedResource Include="SocketService\obj\Debug\SocketService.Properties.Resources.resources" />
+    <EmbeddedResource Include="SocketService\Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SocketService\obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,6 +25,11 @@
             Window1
             </summary>
         </member>
+        <member name="M:DataBinding.Window1.#ctor">
+            <summary>
+            窗口1
+            </summary>
+        </member>
         <member name="M:DataBinding.Window1.InitializeComponent">
             <summary>
             InitializeComponent

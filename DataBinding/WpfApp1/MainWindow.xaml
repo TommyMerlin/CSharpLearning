@@ -1,16 +1,16 @@
 ﻿<Window x:Class="WpfApplication1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="memoire" Height="360" Width="280" WindowStyle="None" ResizeMode="NoResize" Background="Cornsilk" Topmost="False" ShowInTaskbar="False"
-        WindowStartupLocation="Manual" Loaded="Grid_Loaded_1" Closing="Window_Closing_1" MouseDoubleClick="rbox_1_MouseDoubleClick_1" KeyDown="Window_KeyDown_1">
-    <Grid Margin="0,0,0,0">
-        <RichTextBox HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Top" Background="Transparent" Name="rbox_1" MouseDoubleClick="rbox_1_MouseDoubleClick_1" TextChanged="rbox_1_TextChanged_1" FontFamily="楷体" FontSize="20" FontWeight="Bold">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text=""/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <!--<Button Content="" HorizontalAlignment="Left" Margin="270,350,0,0" Width="10" Name="btn_1" Click="btn_1_Click"/>-->
+        Title="MianWindow" Height="360" Width="500">
+    <Grid>
+        <Button x:Name="btnOpen" Content="打开" HorizontalAlignment="Left" Margin="25,21,0,0" VerticalAlignment="Top" Width="75" Click="BtnOpen_Click"/>
+        <ListBox x:Name="lbMusic" HorizontalAlignment="Left" Height="195" Margin="25,70,0,0" VerticalAlignment="Top" Width="320" MouseDoubleClick="LbMusic_MouseDoubleClick"/>
+        <Button x:Name="btnUp" Content="UP" HorizontalAlignment="Left" Margin="360,70,0,0" VerticalAlignment="Top" Width="75" Click="BtnUp_Click"/>
+        <Button x:Name="btnDown" Content="DOWN" HorizontalAlignment="Left" Margin="360,125,0,0" VerticalAlignment="Top" Width="75" Click="BtnDown_Click"/>
+        <Button x:Name="btnOpenFile" Content="打开文件" HorizontalAlignment="Left" Margin="140,21,0,0" VerticalAlignment="Top" Width="75" Click="BtnOpenFile_Click"/>
+        <Label x:Name="label1" Content="" HorizontalAlignment="Left" Margin="25,280,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="" HorizontalAlignment="Left" Margin="100,280,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="" HorizontalAlignment="Left" Margin="175,280,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

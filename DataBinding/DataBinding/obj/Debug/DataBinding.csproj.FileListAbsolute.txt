@@ -27,3 +27,4 @@ C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\The
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\Interop.AutoCAD.dll
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.csproj.ResolveComReference.cache
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\bin\Debug\DataBinding.xml
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataBinding\obj\Debug\DataBinding.csprojAssemblyReference.cache
