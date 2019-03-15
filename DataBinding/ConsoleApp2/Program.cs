@@ -12,45 +12,41 @@ namespace ConsoleApp2
 {
     class Program
     {
-        private int cnt = 0;
-        public void Count()
+        public static List<int> SelectSort(List<int> lists)
         {
-            while(cnt < 10)
+            for (int i = 0; i < lists.Count; i++)
             {
-                cnt++;
-                Console.WriteLine(Thread.CurrentThread.Name + " 数到: " + cnt);
-                Thread.Sleep(100);
+                int min = lists[i];
+                int minindex = i;
+                for(int j = i; j < lists.Count; j++)
+                {
+                    if (min > lists[j])
+                    {
+                        min = lists[j];
+                        minindex = j;
+                    }
+                }
+                int temp = lists[i];
+                lists[i] = lists[minindex];
+                lists[minindex] = temp;
             }
+
+            return lists;
         }
 
         static void Main(string[] args)
         {
-            //GreetingPeople("HuYe", EnglishGreeting);
-            //GreetingPeople("HuYe", ChineseGreeting);
-
-            //GreetingManager gm = new GreetingManager();
-            //gm.MakeGreet += ChineseGreeting;
-            //gm.MakeGreet += EnglishGreeting;
-            //gm.GreetingPeople("Huye");
-
-            //Heater heater = new Heater();
-            //Alarm alarm = new Alarm();
-            //Display display = new Display();
-
-            Program g1 = new Program();
-            Program g2 = new Program();
-
-            Thread th1 = new Thread(new ThreadStart(g1.Count));
-            th1.Name = "线程1";
-            Thread th2 = new Thread(new ThreadStart(g2.Count));
-            th2.Name = "线程2";
-            Thread th3 = new Thread(new ThreadStart(g2.Count));
-            th3.Name = "线程3";
-            th2.Priority = ThreadPriority.Highest;
-
-            th1.Start();
-            th2.Start();
-            th3.Start();
+            Random rnd = new Random();
+            List<int> lists = new List<int>();
+            for (int i = 0; i < 100; i++)
+            {
+                lists.Add(rnd.Next(0, 10));
+            }
+            lists = Program.SelectSort(lists);
+            foreach(int num in lists)
+            {
+                Console.WriteLine(num);
+            }
 
             Console.ReadKey();
         }
