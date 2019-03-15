@@ -11,6 +11,8 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.Net;
+using System.Net.Sockets;
 
 
 namespace WpfApplication1
@@ -20,7 +22,21 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
+        public delegate void OutPutDelegate();
+
+        public void OutPut()
+        {
+            //Socket socket = new Socket();
+            txtblockMsg.Dispatcher?.Invoke(new OutPutDelegate(OutPutAction));
+        }
+
+        public void OutPutAction()
+        {
+            string msg = "Hello Word";
+            txtblockMsg.Text = msg;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -126,6 +142,14 @@ namespace WpfApplication1
             {
                 Console.WriteLine(i);
             }
+        }
+
+        private void BtnMsg_Click(object sender, RoutedEventArgs e)
+        {
+
+            Thread th = new Thread(OutPut);
+            th.Start();
+
         }
     }
 }
