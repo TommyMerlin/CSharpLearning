@@ -13,3 +13,4 @@ C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Example\obj\Debug\Example
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Example\obj\Debug\Example.csproj.CoreCompileInputs.cache
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Example\obj\Debug\Example.exe
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Example\obj\Debug\Example.pdb
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Example\obj\Debug\Example.csprojAssemblyReference.cache

@@ -26,8 +26,6 @@ namespace SocketService
     /// </summary>
     public partial class Server : Window
     {
-        // 创建IP地址
-        IPAddress ip;
         // 创建TCP监听对象
         Socket serverSocket = null;
         List<Socket> clientSockets = new List<Socket>();
@@ -54,21 +52,38 @@ namespace SocketService
                 //txtblock.Text = connectedClient;
                 //lbConnectedIP.Items.Add(txtblock);
                 Thread appendIpThread = new Thread(AppendIpList);
-                appendIpThread.Start(connectedClient);
+                appendIpThread.IsBackground = true;
+                appendIpThread.Start();
 
                 Thread receivedThread = new Thread(ReceiveMsg);
+                receivedThread.IsBackground = true;
                 receivedThread.Start(clientSocket);
             }
         }
 
-        public void AppendIpList(object connectedClient)
+        public void AppendIpList()
         {
-            
             lbConnectedIP.Dispatcher.BeginInvoke(new Action(() =>
             {
-                TextBlock txtblock = new TextBlock();
-                txtblock.Text = (string)connectedClient;
-                lbConnectedIP.Items.Add(txtblock);
+                lbConnectedIP.Items.Clear();
+                foreach(Socket socket in clientSockets)
+                {
+                    if (socket.Connected && socket != null)
+                    {
+                        //IPAddress clientIP = (socket.RemoteEndPoint as IPEndPoint).Address;
+                        //int clientPort = (socket.RemoteEndPoint as IPEndPoint).Port;
+                        string connectedClient = socket.RemoteEndPoint.ToString() + " " + socket.Connected.ToString();
+                        TextBlock txtblock = new TextBlock
+                        {
+                            Text = connectedClient
+                        };
+                        lbConnectedIP.Items.Add(txtblock);
+                    }
+                    else
+                    {
+                        //clientSockets
+                    }
+                }
             }));
 
             //lbConnectedIP.Items.Add(txtblock);
@@ -130,7 +145,7 @@ namespace SocketService
 
             try
             {
-                IPAddress ip = IPAddress.Parse("127.0.0.1");
+                IPAddress ip = IPAddress.Parse(txtboxIP.Text);
                 serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 int port = Convert.ToInt32(txtboxPort.Text);
                 serverSocket.Bind(new IPEndPoint(ip, port));  //绑定IP地址：端口  
@@ -153,7 +168,8 @@ namespace SocketService
 
                 Thread th = new Thread(ListenClientConnect)
                 {
-                    Name = "接收消息"
+                    Name = "接收消息",
+                    IsBackground = true
                 };
                 th.Start();
                 btnStart.IsEnabled = false;
@@ -181,7 +197,11 @@ namespace SocketService
 
                 foreach(Socket socket in clientSockets)
                 {
-                    socket.Send(Encoding.Unicode.GetBytes(message));
+                    if (socket != null && socket.Connected)
+                    {
+                        socket.Send(Encoding.Unicode.GetBytes(message));
+                    }
+                    
                 }
 
                 
@@ -196,6 +216,11 @@ namespace SocketService
         {
             Client c = new Client();
             c.Show();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //Environment.Exit(0);
         }
     }
 }

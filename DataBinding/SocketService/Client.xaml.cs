@@ -29,7 +29,7 @@ namespace SocketService
 
         }
 
-        Socket clientSocket = null;
+        private static Socket clientSocket = null;
 
         public void ReceiveMsg()
         {
@@ -61,8 +61,8 @@ namespace SocketService
                 }
                 catch (Exception ex)
                 {
-                    clientSocket.Shutdown(SocketShutdown.Both);
-                    clientSocket.Close();
+                    //clientSocket.Shutdown(SocketShutdown.Both);
+                    //clientSocket.Close();
                     txtboxInfo.Dispatcher.BeginInvoke(
 
                             new Action(() => { txtboxInfo.Text = "\r\n" + $"【信息接收异常】 {ex.Message}\r\n" + txtboxInfo.Text; }), null);
@@ -74,17 +74,26 @@ namespace SocketService
         private void BtnConnect_Click(object sender, RoutedEventArgs e)
         {
             //client = new TcpClient();
-            //设定服务器IP地址  
-            IPAddress ip = IPAddress.Parse(txtboxIP.Text);
-            int port = Convert.ToInt32(txtboxPort.Text);
-            clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            ////设定服务器IP地址  
+            //IPAddress ip = IPAddress.Parse(txtboxIP.Text);
+            //int port = Convert.ToInt32(txtboxPort.Text);
+            //clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {
+                IPAddress ip = IPAddress.Parse(txtboxIP.Text);
+                int port = Convert.ToInt32(txtboxPort.Text);
+
+                if (clientSocket != null)
+                {
+                    clientSocket.Close();
+                }
+                
+                clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 clientSocket.Connect(new IPEndPoint(ip, port));
                 txtboxInfo.Text = $"【连接成功】 我方端口 {clientSocket.LocalEndPoint.ToString()}\r\n" + txtboxInfo.Text;
-
                 Thread th = new Thread(ReceiveMsg);
+                th.IsBackground = true;
                 th.Start();
             }
             catch (Exception ex)
@@ -105,6 +114,27 @@ namespace SocketService
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (clientSocket != null)
+                {
+                    //clientSocket.Shutdown(SocketShutdown.Both);
+                    //Thread.Sleep(10);
+                    clientSocket.Close();
+                }
+                
+                //Thread.CurrentThread.Abort();
+                //clientSocket.BeginDisconnect(true, null, null);
+            }
+            catch (Exception ex)
+            {
+
                 MessageBox.Show(ex.Message);
             }
         }

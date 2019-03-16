@@ -12,43 +12,66 @@ namespace ConsoleApp2
 {
     class Program
     {
-        public static List<int> SelectSort(List<int> lists)
-        {
-            for (int i = 0; i < lists.Count; i++)
-            {
-                int min = lists[i];
-                int minindex = i;
-                for(int j = i; j < lists.Count; j++)
-                {
-                    if (min > lists[j])
-                    {
-                        min = lists[j];
-                        minindex = j;
-                    }
-                }
-                int temp = lists[i];
-                lists[i] = lists[minindex];
-                lists[minindex] = temp;
-            }
+        
 
-            return lists;
+        public static int Max(int[] Lists,int count,out int begin,out int end)
+        {
+            int thisSum = 0;
+            int maxSum = 0;
+            int maybeBegin = 0;
+            begin = 0;
+            end = count;
+
+            int flag = 1;
+            int max_flag = 1;
+
+            for (int i = 0; i < count; i++)
+            {
+                thisSum += Lists[i];
+                if (thisSum > maxSum)
+                {
+                    max_flag = -max_flag;
+                    if (flag > 0)
+                    {
+                        begin = maybeBegin;
+                        flag = -flag;
+                    }
+                    maxSum = thisSum;
+                    end = i;
+                }
+                else if (thisSum < 0)
+                {
+                    maybeBegin = i + 1;
+                    thisSum = 0;
+                    flag = 1;
+                    //end = i;
+                    //flag = -flag;
+                }
+            }
+            return maxSum;
         }
 
         static void Main(string[] args)
         {
-            Random rnd = new Random();
-            List<int> lists = new List<int>();
-            for (int i = 0; i < 100; i++)
+            int count = int.Parse(Console.ReadLine());
+            string[] strs = new string[count];
+            string input = Console.ReadLine();
+
+            strs = input.Split(' ');
+
+            int[] nums = new int[count];
+
+            for (int i = 0; i < count; i++)
             {
-                lists.Add(rnd.Next(0, 10));
-            }
-            lists = Program.SelectSort(lists);
-            foreach(int num in lists)
-            {
-                Console.WriteLine(num);
+                nums[i] = Convert.ToInt32(strs[i]);
             }
 
-            Console.ReadKey();
+            int beginIndex, endIndex;
+
+            int MaxSum = Max(nums, count, out beginIndex, out endIndex);
+            Console.WriteLine("{0} {1} {2}",MaxSum,beginIndex,endIndex);
+
+            Console.Read();
         }
 
         
