@@ -1,79 +1,55 @@
-﻿using System;
+﻿// ***********************************************************************
+// Author     ：HuYe
+// Function   ：
+// CreateTime ：2019/3/16 21:20:35
+// ***********************************************************************
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
-using System.Net.Sockets;
-using System.Net;
-using System.IO;
+using BLL.Astar;
+using System.Data;
 
-namespace ConsoleApp2
+namespace Drawing
 {
     class Program
     {
-        
-
-        public static int Max(int[] Lists,int count,out int begin,out int end)
-        {
-            int thisSum = 0;
-            int maxSum = 0;
-            int maybeBegin = 0;
-            begin = 0;
-            end = count;
-
-            int flag = 1;
-            int max_flag = 1;
-
-            for (int i = 0; i < count; i++)
-            {
-                thisSum += Lists[i];
-                if (thisSum > maxSum)
-                {
-                    max_flag = -max_flag;
-                    if (flag > 0)
-                    {
-                        begin = maybeBegin;
-                        flag = -flag;
-                    }
-                    maxSum = thisSum;
-                    end = i;
-                }
-                else if (thisSum < 0)
-                {
-                    maybeBegin = i + 1;
-                    thisSum = 0;
-                    flag = 1;
-                    //end = i;
-                    //flag = -flag;
-                }
-            }
-            return maxSum;
-        }
-
         static void Main(string[] args)
         {
-            int count = int.Parse(Console.ReadLine());
-            string[] strs = new string[count];
-            string input = Console.ReadLine();
+            Graph graph = new Graph();
+            DataTable dt = graph.DS.Tables["PathInfo"];
+            DataTable dtNode = graph.DS.Tables["NodeInfo"];
 
-            strs = input.Split(' ');
-
-            int[] nums = new int[count];
-
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                nums[i] = Convert.ToInt32(strs[i]);
+                double bnX = (Convert.ToDouble(dt.Rows[i][0])) / 100;
+                double bnY = (Convert.ToDouble(dt.Rows[i][1])) / 100;
+                double enX = (Convert.ToDouble(dt.Rows[i][2])) / 100;
+                double enY = (Convert.ToDouble(dt.Rows[i][3])) / 100;
+
+                //double bnX = Convert.ToDouble(dt.Rows[i][0]);
+                //double bnY = Convert.ToDouble(dt.Rows[i][1]);
+                //double enX = Convert.ToDouble(dt.Rows[i][2]);
+                //double enY = Convert.ToDouble(dt.Rows[i][3]);
+
+
+                Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", bnX, bnY, enX, enY);
             }
 
-            int beginIndex, endIndex;
+            for (int i = 0; i < dtNode.Rows.Count; i++)
+            {
+                double X = (Convert.ToDouble(dtNode.Rows[i][1])) / 100;
+                double Y = (Convert.ToDouble(dtNode.Rows[i][2])) / 100;
 
-            int MaxSum = Max(nums, count, out beginIndex, out endIndex);
-            Console.WriteLine("{0} {1} {2}",MaxSum,beginIndex,endIndex);
+                //double X = Convert.ToDouble(dt.Rows[i][1]);
+                //double Y = Convert.ToDouble(dt.Rows[i][2]);
+
+                Console.WriteLine("{0,-10}{1,-10}", X, Y);
+            }
 
             Console.Read();
         }
-
-        
     }
 }

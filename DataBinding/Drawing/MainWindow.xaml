@@ -1,0 +1,22 @@
+﻿<Window x:Class="Drawing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Drawing"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <TreeView Grid.Column="0" Margin="10">
+            <TreeViewItem Header="画板">
+                <TreeViewItem Name="treeitem1" Tag="Pages/Page1.xaml" Header="Page1" GotFocus="TreeitemPage_GotFocus"/>
+                <TreeViewItem Tag="Pages/Page2.xaml" Header="Page2" GotFocus="TreeitemPage_GotFocus"/>
+            </TreeViewItem>
+        </TreeView>
+        <Frame Grid.Column="1" x:Name="frame" Margin="10" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
