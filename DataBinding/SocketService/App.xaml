@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:SocketService"
              StartupUri="Client.xaml">
     <Application.Resources>
-         
+        
     </Application.Resources>
 </Application>
