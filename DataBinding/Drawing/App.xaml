@@ -12,5 +12,31 @@
             <Setter Property="Padding" Value="3"/>
             <Setter Property="FontSize" Value="15"/>
         </Style>
+        <GeometryGroup x:Key="ForbidShape">
+            <CombinedGeometry GeometryCombineMode="Union">
+                <CombinedGeometry.Geometry1>
+                    <CombinedGeometry GeometryCombineMode="Exclude">
+                        <CombinedGeometry.Geometry1>
+                            <EllipseGeometry Center="50 50" RadiusX="50" RadiusY="50"/>
+                        </CombinedGeometry.Geometry1>
+                        <CombinedGeometry.Geometry2>
+                            <EllipseGeometry Center="50 50" RadiusX="40" RadiusY="40"/>
+                        </CombinedGeometry.Geometry2>
+                    </CombinedGeometry>
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    <RectangleGeometry Rect="5,45,90,10">
+                        <RectangleGeometry.Transform>
+                            <RotateTransform Angle="-45" CenterX="50" CenterY="50"/>
+                        </RectangleGeometry.Transform>
+                    </RectangleGeometry>
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </GeometryGroup>
+        <Style TargetType="{x:Type Path}">
+            <Setter Property="Fill" Value="LightBlue"/>
+            <Setter Property="Stroke" Value="Red"/>
+            <Setter Property="StrokeThickness" Value="3"/>
+        </Style>
     </Application.Resources>
 </Application>

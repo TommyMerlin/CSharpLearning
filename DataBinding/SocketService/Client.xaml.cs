@@ -29,8 +29,11 @@ namespace SocketService
 
         }
 
-        private static Socket clientSocket = null;
+        private static Socket clientSocket = null;    //客户端Socket
 
+        /// <summary>
+        /// 接收服务端发来的信息
+        /// </summary>
         public void ReceiveMsg()
         {
             while (true)
@@ -49,10 +52,6 @@ namespace SocketService
                     //获取客户端端口
                     int clientPort = (clientSocket.RemoteEndPoint as IPEndPoint).Port;
                     string sendStr = clientIP + ":" + clientPort.ToString() + "--->" + recStr;
-                    //foreach (Socket socket in clientSockets)
-                    //{
-                    //    socket.Send(Encoding.Unicode.GetBytes(sendStr));
-                    //}
                     //显示内容
                     txtboxInfo.Dispatcher.BeginInvoke(
 
@@ -61,8 +60,6 @@ namespace SocketService
                 }
                 catch (Exception ex)
                 {
-                    //clientSocket.Shutdown(SocketShutdown.Both);
-                    //clientSocket.Close();
                     txtboxInfo.Dispatcher.BeginInvoke(
 
                             new Action(() => { txtboxInfo.Text = "\r\n" + $"【信息接收异常】 {ex.Message}\r\n" + txtboxInfo.Text; }), null);
@@ -71,19 +68,17 @@ namespace SocketService
             }
         }
 
+        /// <summary>
+        /// 连接服务端
+        /// </summary>
         private void BtnConnect_Click(object sender, RoutedEventArgs e)
         {
-            //client = new TcpClient();
-            ////设定服务器IP地址  
-            //IPAddress ip = IPAddress.Parse(txtboxIP.Text);
-            //int port = Convert.ToInt32(txtboxPort.Text);
-            //clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
             try
             {
                 IPAddress ip = IPAddress.Parse(txtboxIP.Text);
                 int port = Convert.ToInt32(txtboxPort.Text);
 
+                // 如果当前已经存在Socket，则先关闭当前Socket
                 if (clientSocket != null)
                 {
                     clientSocket.Close();
@@ -92,18 +87,22 @@ namespace SocketService
                 clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 clientSocket.Connect(new IPEndPoint(ip, port));
                 txtboxInfo.Text = $"【连接成功】 我方端口 {clientSocket.LocalEndPoint.ToString()}\r\n" + txtboxInfo.Text;
-                Thread th = new Thread(ReceiveMsg);
-                th.IsBackground = true;
+                Thread th = new Thread(ReceiveMsg)
+                {
+                    IsBackground = true
+                };
                 th.Start();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("【连接失败】 " + ex.Message);
                 return;
             }
         }
 
+        /// <summary>
+        /// 发送信息
+        /// </summary>
         private void BtnSend_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -118,19 +117,18 @@ namespace SocketService
             }
         }
 
+        /// <summary>
+        /// 关闭窗口
+        /// </summary>
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             try
             {
+                // 如果当前已经存在Socket，则关闭当前Socket
                 if (clientSocket != null)
                 {
-                    //clientSocket.Shutdown(SocketShutdown.Both);
-                    //Thread.Sleep(10);
                     clientSocket.Close();
                 }
-                
-                //Thread.CurrentThread.Abort();
-                //clientSocket.BeginDisconnect(true, null, null);
             }
             catch (Exception ex)
             {

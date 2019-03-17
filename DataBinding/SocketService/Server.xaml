@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SocketService"
         mc:Ignorable="d"
-        Title="服务器端" Height="420" Width="668.134" Loaded="Window_Loaded" Closing="Window_Closing">
+        Title="服务器端" Height="420" Width="668.134">
     <Grid>
         <TextBox x:Name="txtboxMessage" HorizontalAlignment="Left" Height="23" Margin="40,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
         <Button x:Name="btnSend" Content="发送" HorizontalAlignment="Left" Margin="340,137,0,0" VerticalAlignment="Top" Width="75" Click="BtnSend_Click"/>

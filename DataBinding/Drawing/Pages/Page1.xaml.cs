@@ -28,17 +28,11 @@ namespace Drawing.Pages
             Graph graph = new Graph();
             DataTable dt = graph.DS.Tables["PathInfo"];
             DataTable dtNode = graph.DS.Tables["NodeInfo"];
-            Path path = new Path();
-            path.Stroke = Brushes.Black;
-            path.StrokeThickness = 3;
+            Path path = new Path
+            {
+                Stroke = Brushes.Black
+            };
             GeometryGroup g = new GeometryGroup();
-            //foreach (DataRow row in dt.Rows)
-            //{
-            //    Point sp = new Point((double)row["bnX"], (double)row["bnY"]);
-            //    Point ep = new Point((double)row["enX"], (double)row["enX"]);
-            //    LineGeometry line = new LineGeometry(sp, ep);
-            //    g.Children.Add(line);
-            //}
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -64,7 +58,6 @@ namespace Drawing.Pages
             path.Data = g;
             canvas1.Children.Add(path);
             grid1.ItemsSource = dt.DefaultView;
-            //MessageBox.Show(((double)dt.Rows[0][0]).ToString());
         }
     }
 }

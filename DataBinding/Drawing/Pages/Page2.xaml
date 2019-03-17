@@ -18,7 +18,8 @@
     </Page.Resources>
     <Grid>
         <Canvas>
-            <Path Canvas.Left="100" Canvas.Top="100" Fill="LightBlue" Stroke="Red" StrokeThickness="3" Data="{StaticResource ComGeo}"/>
+            <Path Canvas.Left="5" Canvas.Top="50" Data="{StaticResource ComGeo}"/>
+            <Path Canvas.Left="200" Canvas.Top="200" Data="{StaticResource ForbidShape}"/>
         </Canvas>
     </Grid>
 </Page>

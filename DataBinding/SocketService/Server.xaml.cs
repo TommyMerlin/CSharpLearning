@@ -28,51 +28,57 @@ namespace SocketService
     {
         // 创建TCP监听对象
         Socket serverSocket = null;
-        //List<Socket> clientSockets = new List<Socket>();
+
+        // 创建连接到服务器的客户端字典（IP地址-Socket键值对）
         Dictionary<string, Socket> clientSockets = new Dictionary<string, Socket>();
 
-        
-        
         public Server()
         {
             InitializeComponent();
             
         }
 
+        /// <summary>
+        /// 时刻保持监听客户端的连接请求
+        /// </summary>
         public void ListenClientConnect()
         {
             while (true)
             {
-                Socket clientSocket = serverSocket.Accept();
+                Socket clientSocket = serverSocket.Accept();    //连接到服务端的客户端Sokcet
+                // 客户端字典中添加连接上的客户端
                 clientSockets.Add(clientSocket.RemoteEndPoint.ToString(), clientSocket);
 
-                //IPAddress clientIP = (clientSocket.RemoteEndPoint as IPEndPoint).Address;
-                //int clientPort = (clientSocket.RemoteEndPoint as IPEndPoint).Port;
-                //string connectedClient = clientIP + ":" + clientPort.ToString();
-                //TextBlock txtblock = new TextBlock();
-                //txtblock.Text = connectedClient;
-                //lbConnectedIP.Items.Add(txtblock);
-                Thread appendIpThread = new Thread(AppendIpList);
-                appendIpThread.IsBackground = true;
+                // 新开线程时刻更新客户端列表
+                Thread appendIpThread = new Thread(RefreshIpList)
+                {
+                    IsBackground = true
+                };
                 appendIpThread.Start();
 
-                Thread receivedThread = new Thread(ReceiveMsg);
-                receivedThread.IsBackground = true;
+                // 新开线程监听连接上的客户端的信息传输
+                Thread receivedThread = new Thread(ReceiveMsg)
+                {
+                    IsBackground = true
+                };
                 receivedThread.Start(clientSocket);
             }
         }
 
-        public void AppendIpList()
+        /// <summary>
+        /// 更新客户端列表
+        /// </summary>
+        public void RefreshIpList()
         {
             lbConnectedIP.Dispatcher.BeginInvoke(new Action(() =>
             {
                 lbConnectedIP.Items.Clear();
+
+                // 将每一个非空且处于连接状态的Socket添加到列表中
                 foreach(var socket in clientSockets)
                 {
                     if (socket.Value.Connected && socket.Value != null)
                     {
-                        //IPAddress clientIP = (socket.RemoteEndPoint as IPEndPoint).Address;
-                        //int clientPort = (socket.RemoteEndPoint as IPEndPoint).Port;
                         string connectedClient = socket.Value.RemoteEndPoint.ToString();
                         TextBlock txtblock = new TextBlock
                         {
@@ -80,16 +86,14 @@ namespace SocketService
                         };
                         lbConnectedIP.Items.Add(txtblock);
                     }
-                    else
-                    {
-                        //clientSockets
-                    }
                 }
             }));
-
-            //lbConnectedIP.Items.Add(txtblock);
         }
 
+        /// <summary>
+        /// 接收客户端发来的信息
+        /// </summary>
+        /// <param name="clientSocket">连接上的客户端Socket</param>
         public void ReceiveMsg(object clientSocket)
         {
             Socket connection = (Socket)clientSocket;
@@ -103,16 +107,11 @@ namespace SocketService
                     //把接受的数据从字节类型转化为字符类型
                     string recStr = Encoding.Unicode.GetString(result, 0, receiveNumber);
 
-
                     //获取当前客户端的ip地址
                     IPAddress clientIP = (connection.RemoteEndPoint as IPEndPoint).Address;
                     //获取客户端端口
                     int clientPort = (connection.RemoteEndPoint as IPEndPoint).Port;
                     string sendStr = clientIP + ":" + clientPort.ToString() + "--->" + recStr;
-                    //foreach (Socket socket in clientSockets)
-                    //{
-                    //    socket.Send(Encoding.Unicode.GetBytes(sendStr));
-                    //}
                     //显示内容
                     txtboxInfo.Dispatcher.BeginInvoke(
 
@@ -121,6 +120,7 @@ namespace SocketService
                 }
                 catch (Exception ex)
                 {
+                    // 出现异常，关闭连接
                     connection.Shutdown(SocketShutdown.Both);
                     connection.Close();
                     txtboxInfo.Dispatcher.BeginInvoke(
@@ -131,42 +131,33 @@ namespace SocketService
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
+        /// <summary>
+        /// 服务端建立监听端口
+        /// </summary>
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
-            //string path = @"F:\Desktop\log.txt";
-            string path = "log.txt";
+            string path = "log.txt";                                     //日志路径
             FileStream fs = new FileStream(path, FileMode.Append);
             StreamWriter sw = new StreamWriter(fs);
-            string logInfo;
+            string logInfo;                                              //需要写入的日志信息
 
             try
             {
                 IPAddress ip = IPAddress.Parse(txtboxIP.Text);
                 serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 int port = Convert.ToInt32(txtboxPort.Text);
-                serverSocket.Bind(new IPEndPoint(ip, port));  //绑定IP地址：端口  
-                serverSocket.Listen(10);    //设定最多10个排队连接请求
+
+                // 绑定IP地址：端口
+                serverSocket.Bind(new IPEndPoint(ip, port));
+                //设定最多10个排队连接请求
+                serverSocket.Listen(10);    
                 txtboxIP.Text = ip.ToString();
                 txtboxInfo.Text = "【服务器成功开启】\r\n" + txtboxInfo.Text;
                 logInfo = $"【服务器成功开启】 IP:{ip} 端口号:{txtboxPort.Text} " + DateTime.Now.ToString();
                 txtboxLog.Text = logInfo + "\r\n" + txtboxLog.Text;
                 sw.WriteLine(logInfo);
 
-                //ip = IPAddress.Parse("127.0.0.1");
-                ////ip = Dns.GetHostEntry("localhost").AddressList[0];
-                //server = new TcpListener(ip, Convert.ToInt32(txtboxPort.Text));
-                //server.Start();
-                //txtboxIP.Text = ip.ToString();
-                //txtboxInfo.Text = "Server started...\r\n" + txtboxInfo.Text;
-                //logInfo = $"【服务器成功开启】 IP:{ip} 端口号:{txtboxPort.Text} " + DateTime.Now.ToString();
-                //txtboxLog.Text = logInfo + "\r\n" + txtboxLog.Text;
-                //sw.WriteLine(logInfo);
-
+                // 新开线程，监听客户端连接请求
                 Thread th = new Thread(ListenClientConnect)
                 {
                     Name = "接收消息",
@@ -189,6 +180,9 @@ namespace SocketService
             }
         }
 
+        /// <summary>
+        /// 发送信息
+        /// </summary>
         private void BtnSend_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -233,11 +227,6 @@ namespace SocketService
         {
             Client c = new Client();
             c.Show();
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            //Environment.Exit(0);
         }
     }
 }
