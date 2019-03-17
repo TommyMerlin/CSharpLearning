@@ -8,9 +8,36 @@
             <Setter Property="Margin" Value="0 3 0 3"/>
             <Setter Property="FontSize" Value="15"/>
         </Style>
-        <Style TargetType="{x:Type Button}">
+        <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
             <Setter Property="Padding" Value="3"/>
             <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Width" Value="82"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <Path x:Name="ell" Fill="Orange">
+                                <Path.Data>
+                                    <CombinedGeometry GeometryCombineMode="Union">
+                                        <CombinedGeometry.Geometry1>
+                                            <EllipseGeometry Center="41 41" RadiusX="40" RadiusY="30"/>
+                                        </CombinedGeometry.Geometry1>
+                                        <CombinedGeometry.Geometry2>
+                                            <EllipseGeometry Center="41 41" RadiusX="30" RadiusY="40"/>
+                                        </CombinedGeometry.Geometry2>
+                                    </CombinedGeometry>
+                                </Path.Data>
+                            </Path>
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Content="{TemplateBinding Button.Content}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="ell" Property="Fill" Value="Red"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
         <GeometryGroup x:Key="ForbidShape">
             <CombinedGeometry GeometryCombineMode="Union">
@@ -36,7 +63,29 @@
         <Style TargetType="{x:Type Path}">
             <Setter Property="Fill" Value="LightBlue"/>
             <Setter Property="Stroke" Value="Red"/>
-            <Setter Property="StrokeThickness" Value="3"/>
+            <Setter Property="StrokeThickness" Value="1"/>
         </Style>
+        <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">
+            <Grid>
+                <Path x:Name="ell" Fill="Orange">
+                    <Path.Data>
+                        <CombinedGeometry GeometryCombineMode="Union">
+                            <CombinedGeometry.Geometry1>
+                                <EllipseGeometry Center="41 41" RadiusX="40" RadiusY="30"/>
+                            </CombinedGeometry.Geometry1>
+                            <CombinedGeometry.Geometry2>
+                                <EllipseGeometry Center="41 41" RadiusX="30" RadiusY="40"/>
+                            </CombinedGeometry.Geometry2>
+                        </CombinedGeometry>
+                    </Path.Data>
+                </Path>
+                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Content="{TemplateBinding Button.Content}"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="ell" Property="Fill" Value="Red"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
     </Application.Resources>
 </Application>

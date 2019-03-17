@@ -59,5 +59,15 @@ namespace Drawing.Pages
             canvas1.Children.Add(path);
             grid1.ItemsSource = dt.DefaultView;
         }
+
+        private void Copy_Click(object sender, RoutedEventArgs e)
+        {
+            txtbox1.Text += txtbox1.SelectedText;
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            txtbox1.Text = txtbox1.SelectedText;
+        }
     }
 }

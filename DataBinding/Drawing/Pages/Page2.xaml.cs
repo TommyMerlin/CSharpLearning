@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,23 @@ namespace Drawing.Pages
         public Page2()
         {
             InitializeComponent();
+            List<Student> students = new List<Student>()
+            {
+                new Student(){Name = "HZ",Age = 200},
+                new Student(){Name = "NB",Age = 100},
+            };
+            lbInfo.ItemsSource = students;
         }
 
         private void Rectangle_MouseEnter(object sender, MouseEventArgs e)
         {
             rec1.Fill = Brushes.AliceBlue;
         }
+    }
+
+    class Student
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
     }
 }

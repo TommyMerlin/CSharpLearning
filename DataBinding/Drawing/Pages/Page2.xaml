@@ -19,10 +19,34 @@
             <EllipseGeometry Center="30 30" RadiusX="30" RadiusY="20"/>
             <EllipseGeometry Center="30 30" RadiusX="20" RadiusY="30"/>
         </GeometryGroup>
+        <DataTemplate x:Key="personDataTem">
+            <Border Name="blueBorder" Margin="3" BorderThickness="3" BorderBrush="Blue"
+              CornerRadius="5">
+                <Grid Margin="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="nametxt" FontWeight="Bold" Text="{Binding Path=Name}"></TextBlock>
+                    <TextBlock Grid.Row="1" Text="{Binding Path=Age}"></TextBlock>
+                </Grid>
+            </Border>
+            <!--定义数据模板触发器-->
+            <DataTemplate.Triggers>
+                <Trigger SourceName="blueBorder" Property="IsMouseOver" Value="True">
+                    <Setter TargetName="blueBorder" Property="Background" Value="LightGray"/>
+                    <Setter TargetName="nametxt" Property="FontSize" Value="20"/>
+                </Trigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
     </Page.Resources>
     <Grid>
-        <Canvas>
-            <Rectangle x:Name="rec1" Canvas.Left="100" Canvas.Top="250" Width="100" Height="50" Fill="LightBlue" Stroke="Red" StrokeThickness="3" MouseEnter="Rectangle_MouseEnter"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="0">
+            <Rectangle x:Name="rec1" Canvas.Left="600" Canvas.Top="100" Width="100" Height="50" Fill="LightBlue" Stroke="Red" StrokeThickness="3" MouseEnter="Rectangle_MouseEnter"/>
             <Path Canvas.Left="10" Canvas.Top="10" Data="{StaticResource ComGeo}"/>
             <Path Canvas.Left="220" Canvas.Top="10" Data="{StaticResource ForbidShape}"/>
             <Path Canvas.Left="350" Canvas.Top="10">
@@ -44,7 +68,12 @@
                     <PathGeometry Figures="M 10,0 L 100,0 L 100,100 Z"/>
                 </Path.Data>
             </Path>
-            <Button Canvas.Left="10" Canvas.Top="250" Height="65" Width="65" Clip="{StaticResource ButtonClip}">Button</Button>
+            <Button Canvas.Left="600" Canvas.Top="10" Height="65" Width="65" Clip="{StaticResource ButtonClip}">Button</Button>
         </Canvas>
+        <StackPanel Grid.Row="1">
+            <Button Style="{StaticResource buttonStyle}">Button</Button>
+            <!--<Button Template="{StaticResource ButtonTemplate}" Width="82">Button</Button>-->
+            <ListBox x:Name="lbInfo" ItemTemplate="{StaticResource personDataTem}"/>
+        </StackPanel>
     </Grid>
 </Page>

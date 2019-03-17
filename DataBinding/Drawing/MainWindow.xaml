@@ -9,21 +9,23 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="2">
             <TreeView Margin="10">
-                <TreeViewItem Header="画板">
+                <TreeViewItem Header="画板" IsExpanded="True">
                     <TreeViewItem Name="treeitem1" Tag="Pages/Page1.xaml" Header="Page1" GotFocus="TreeitemPage_GotFocus"/>
                     <TreeViewItem Tag="Pages/Page2.xaml" Header="Page2" GotFocus="TreeitemPage_GotFocus"/>
                 </TreeViewItem>
             </TreeView>
         </StackPanel>
-        <Frame Grid.Column="1" Grid.Row="1" x:Name="frame" Margin="10" NavigationUIVisibility="Hidden"/>
+        <Frame Grid.Column="1" Grid.Row="2" x:Name="frame" Margin="10" NavigationUIVisibility="Hidden"/>
         <Menu Grid.ColumnSpan="2" FontSize="18" VerticalAlignment="Center">
             <MenuItem Header="文件">
                 <MenuItem Header="打开">
@@ -31,7 +33,15 @@
                         <Image Source="Images/open.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <Separator/>
+                <Separator>
+                    <Separator.Template>
+                        <ControlTemplate>
+                            <Border CornerRadius="5" Padding="3" BorderBrush="AliceBlue" BorderThickness="1">
+                                <TextBlock TextAlignment="Center" FontFamily="仿宋" FontSize="15" FontWeight="Bold">文件保存</TextBlock>
+                            </Border>
+                        </ControlTemplate>
+                    </Separator.Template>
+                </Separator>
                 <MenuItem Header="保存">
                     <MenuItem.Icon>
                         <Image Source="Images/save.png"/>
@@ -41,5 +51,12 @@
             </MenuItem>
             <MenuItem Header="编辑"/>
         </Menu>
+        <ToolBar Grid.Row="1" Grid.ColumnSpan="2">
+            <ToggleButton>Open</ToggleButton>
+            <Button>Close</Button>
+        </ToolBar>
+        <StatusBar Grid.Row="3" Grid.ColumnSpan="2">
+            
+        </StatusBar>
     </Grid>
 </Window>
