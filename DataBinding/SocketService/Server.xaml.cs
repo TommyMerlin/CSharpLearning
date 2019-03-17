@@ -28,7 +28,8 @@ namespace SocketService
     {
         // 创建TCP监听对象
         Socket serverSocket = null;
-        List<Socket> clientSockets = new List<Socket>();
+        //List<Socket> clientSockets = new List<Socket>();
+        Dictionary<string, Socket> clientSockets = new Dictionary<string, Socket>();
 
         
         
@@ -43,11 +44,11 @@ namespace SocketService
             while (true)
             {
                 Socket clientSocket = serverSocket.Accept();
-                clientSockets.Add(clientSocket);
+                clientSockets.Add(clientSocket.RemoteEndPoint.ToString(), clientSocket);
 
-                IPAddress clientIP = (clientSocket.RemoteEndPoint as IPEndPoint).Address;
-                int clientPort = (clientSocket.RemoteEndPoint as IPEndPoint).Port;
-                string connectedClient = clientIP + ":" + clientPort.ToString();
+                //IPAddress clientIP = (clientSocket.RemoteEndPoint as IPEndPoint).Address;
+                //int clientPort = (clientSocket.RemoteEndPoint as IPEndPoint).Port;
+                //string connectedClient = clientIP + ":" + clientPort.ToString();
                 //TextBlock txtblock = new TextBlock();
                 //txtblock.Text = connectedClient;
                 //lbConnectedIP.Items.Add(txtblock);
@@ -66,13 +67,13 @@ namespace SocketService
             lbConnectedIP.Dispatcher.BeginInvoke(new Action(() =>
             {
                 lbConnectedIP.Items.Clear();
-                foreach(Socket socket in clientSockets)
+                foreach(var socket in clientSockets)
                 {
-                    if (socket.Connected && socket != null)
+                    if (socket.Value.Connected && socket.Value != null)
                     {
                         //IPAddress clientIP = (socket.RemoteEndPoint as IPEndPoint).Address;
                         //int clientPort = (socket.RemoteEndPoint as IPEndPoint).Port;
-                        string connectedClient = socket.RemoteEndPoint.ToString() + " " + socket.Connected.ToString();
+                        string connectedClient = socket.Value.RemoteEndPoint.ToString();
                         TextBlock txtblock = new TextBlock
                         {
                             Text = connectedClient
@@ -195,15 +196,31 @@ namespace SocketService
                 string message = txtboxMessage.Text;
                 txtboxInfo.Text = $"【发送消息】 {message}\r\n" + txtboxInfo.Text;
 
-                foreach(Socket socket in clientSockets)
-                {
-                    if (socket != null && socket.Connected)
-                    {
-                        socket.Send(Encoding.Unicode.GetBytes(message));
-                    }
-                    
-                }
+                //foreach (Socket socket in clientSockets)
+                //{
+                //    if (socket != null && socket.Connected)
+                //    {
+                //        socket.Send(Encoding.Unicode.GetBytes(message));
+                //    }
 
+                //}
+
+                if (lbConnectedIP.SelectedItem == null)
+                {
+                    foreach (var socket in clientSockets)
+                    {
+                        if (socket.Value != null && socket.Value.Connected)
+                        {
+                            socket.Value.Send(Encoding.Unicode.GetBytes(message));
+                        }
+
+                    }
+                }
+                else
+                {
+                    string ip = ((TextBlock)lbConnectedIP.SelectedItem).Text;
+                    clientSockets[ip].Send(Encoding.Unicode.GetBytes(message));
+                }
                 
             }
             catch (Exception ex)
