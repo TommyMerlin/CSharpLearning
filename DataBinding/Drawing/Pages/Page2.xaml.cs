@@ -24,5 +24,10 @@ namespace Drawing.Pages
         {
             InitializeComponent();
         }
+
+        private void Rectangle_MouseEnter(object sender, MouseEventArgs e)
+        {
+            rec1.Fill = Brushes.AliceBlue;
+        }
     }
 }

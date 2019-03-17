@@ -22,6 +22,7 @@
     </Page.Resources>
     <Grid>
         <Canvas>
+            <Rectangle x:Name="rec1" Canvas.Left="100" Canvas.Top="250" Width="100" Height="50" Fill="LightBlue" Stroke="Red" StrokeThickness="3" MouseEnter="Rectangle_MouseEnter"/>
             <Path Canvas.Left="10" Canvas.Top="10" Data="{StaticResource ComGeo}"/>
             <Path Canvas.Left="220" Canvas.Top="10" Data="{StaticResource ForbidShape}"/>
             <Path Canvas.Left="350" Canvas.Top="10">
