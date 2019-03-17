@@ -15,11 +15,35 @@
                 <RectangleGeometry Rect="0 0 100 200"/>
             </CombinedGeometry.Geometry2>
         </CombinedGeometry>
+        <GeometryGroup x:Key="ButtonClip" FillRule="Nonzero">
+            <EllipseGeometry Center="30 30" RadiusX="30" RadiusY="20"/>
+            <EllipseGeometry Center="30 30" RadiusX="20" RadiusY="30"/>
+        </GeometryGroup>
     </Page.Resources>
     <Grid>
         <Canvas>
-            <Path Canvas.Left="5" Canvas.Top="50" Data="{StaticResource ComGeo}"/>
-            <Path Canvas.Left="200" Canvas.Top="200" Data="{StaticResource ForbidShape}"/>
+            <Path Canvas.Left="10" Canvas.Top="10" Data="{StaticResource ComGeo}"/>
+            <Path Canvas.Left="220" Canvas.Top="10" Data="{StaticResource ForbidShape}"/>
+            <Path Canvas.Left="350" Canvas.Top="10">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="00 50" IsClosed="True">
+                            <LineSegment Point="100 50"/>
+                            <LineSegment Point="100 0"/>
+                        </PathFigure>
+                        <PathFigure StartPoint="0 100" IsFilled="True">
+                            <ArcSegment SweepDirection="Clockwise" Size="50 50" Point="0 200"/>
+                            <LineSegment Point="0 100"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <Path Canvas.Left="450" Canvas.Top="10">
+                <Path.Data>
+                    <PathGeometry Figures="M 10,0 L 100,0 L 100,100 Z"/>
+                </Path.Data>
+            </Path>
+            <Button Canvas.Left="10" Canvas.Top="250" Height="65" Width="65" Clip="{StaticResource ButtonClip}">Button</Button>
         </Canvas>
     </Grid>
 </Page>
