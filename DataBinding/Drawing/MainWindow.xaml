@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Drawing"
+        xmlns:r="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
@@ -22,9 +23,14 @@
                 <TreeViewItem Header="画板" IsExpanded="True">
                     <TreeViewItem Name="treeitem1" Tag="Pages/Page1.xaml" Header="Page1" GotFocus="TreeitemPage_GotFocus"/>
                     <TreeViewItem Tag="Pages/Page2.xaml" Header="Page2" GotFocus="TreeitemPage_GotFocus"/>
+                    <TreeViewItem Tag="Pages/Page3.xaml" Header="Page3" GotFocus="TreeitemPage_GotFocus"/>
                 </TreeViewItem>
             </TreeView>
-            <TextBlock x:Name='txtblockTest' FontSize="20" TextAlignment="Center">Hello World</TextBlock>
+            <TextBlock x:Name='txtblockTest' FontSize="20" TextAlignment="Center" TextWrapping="Wrap">
+                Click
+                <Hyperlink Name="uriPage2" NavigateUri="https://www.baidu.com" Click="Hyperlink_Click">here</Hyperlink>
+                to go to Baidu.
+            </TextBlock>
         </StackPanel>
         <Frame Grid.Column="1" Grid.Row="2" x:Name="frame" Margin="10" NavigationUIVisibility="Hidden"/>
         <Menu Grid.ColumnSpan="2" FontSize="18" VerticalAlignment="Center">
@@ -52,6 +58,7 @@
             </MenuItem>
             <MenuItem Header="编辑"/>
         </Menu>
+        
         <ToolBar Grid.Row="1" Grid.ColumnSpan="2">
             <Button Style="{StaticResource ButtonSaveStyle}"></Button>
             <Separator/>

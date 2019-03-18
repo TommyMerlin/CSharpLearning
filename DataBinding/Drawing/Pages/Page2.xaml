@@ -45,7 +45,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Canvas Grid.Row="0">
+        <Canvas x:Name="canvas1" Grid.Row="0">
             <Rectangle x:Name="rec1" Canvas.Left="600" Canvas.Top="100" Width="100" Height="50" Fill="LightBlue" Stroke="Red" StrokeThickness="3" MouseEnter="Rectangle_MouseEnter"/>
             <Path Canvas.Left="10" Canvas.Top="10" Data="{StaticResource ComGeo}"/>
             <Path Canvas.Left="220" Canvas.Top="10" Data="{StaticResource ForbidShape}"/>
@@ -71,7 +71,7 @@
             <Button Canvas.Left="600" Canvas.Top="10" Height="65" Width="65" Clip="{StaticResource ButtonClip}">Button</Button>
         </Canvas>
         <StackPanel Grid.Row="1">
-            <Button Style="{StaticResource buttonStyle}">Button</Button>
+            <Button Style="{StaticResource buttonStyle}" Click="Button_Click">Print</Button>
             <!--<Button Template="{StaticResource ButtonTemplate}" Width="82">Button</Button>-->
             <ListBox x:Name="lbInfo" ItemTemplate="{StaticResource personDataTem}"/>
         </StackPanel>

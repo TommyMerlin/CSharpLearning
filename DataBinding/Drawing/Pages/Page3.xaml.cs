@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,24 +16,13 @@ using System.Windows.Shapes;
 namespace Drawing.Pages
 {
     /// <summary>
-    /// Page2.xaml 的交互逻辑
+    /// Page3.xaml 的交互逻辑
     /// </summary>
-    public partial class Page2 : Page
+    public partial class Page3 : Page
     {
-        public Page2()
+        public Page3()
         {
             InitializeComponent();
-            List<Student> students = new List<Student>()
-            {
-                new Student(){Name = "HZ",Age = 200},
-                new Student(){Name = "NB",Age = 100},
-            };
-            lbInfo.ItemsSource = students;
-        }
-
-        private void Rectangle_MouseEnter(object sender, MouseEventArgs e)
-        {
-            rec1.Fill = Brushes.AliceBlue;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -42,14 +30,8 @@ namespace Drawing.Pages
             PrintDialog pd = new PrintDialog();
             if(pd.ShowDialog() == true)
             {
-                pd.PrintVisual(canvas1, "A Simple Canvas");
+                pd.PrintDocument(((IDocumentPaginatorSource)doc1).DocumentPaginator, "A Simple Document");
             }
         }
-    }
-
-    class Student
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
     }
 }

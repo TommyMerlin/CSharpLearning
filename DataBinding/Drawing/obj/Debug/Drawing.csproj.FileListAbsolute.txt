@@ -18,3 +18,12 @@ C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Pages\P
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Pages\Page2.baml
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Pages\Page1.g.cs
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Pages\Page2.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\bin\Debug\RibbonControlsLibrary.dll
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\bin\Debug\Microsoft.Windows.Shell.dll
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\bin\Debug\RibbonControlsLibrary.pdb
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\bin\Debug\RibbonControlsLibrary.xml
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\bin\Debug\Microsoft.Windows.Shell.pdb
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\bin\Debug\Microsoft.Windows.Shell.xml
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Drawing.csproj.CopyComplete
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Pages\Page3.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Pages\Page3.baml
