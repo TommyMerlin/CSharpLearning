@@ -87,5 +87,25 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+        <Style x:Key="ButtonSaveStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="Images/save.png" Grid.Column="0"/>
+                            <Button Grid.Column="1" BorderBrush="Transparent" Background="Transparent">Open</Button>
+                            <Button Grid.Column="2" BorderBrush="Transparent" Background="Transparent">Save</Button>
+                            <Button Grid.Column="3" BorderBrush="Transparent" Background="Transparent">Close</Button>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

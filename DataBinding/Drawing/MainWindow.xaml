@@ -17,13 +17,14 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="2">
+        <StackPanel x:Name="stackpanel1" Grid.Row="2">
             <TreeView Margin="10">
                 <TreeViewItem Header="画板" IsExpanded="True">
                     <TreeViewItem Name="treeitem1" Tag="Pages/Page1.xaml" Header="Page1" GotFocus="TreeitemPage_GotFocus"/>
                     <TreeViewItem Tag="Pages/Page2.xaml" Header="Page2" GotFocus="TreeitemPage_GotFocus"/>
                 </TreeViewItem>
             </TreeView>
+            <TextBlock x:Name='txtblockTest' FontSize="20" TextAlignment="Center">Hello World</TextBlock>
         </StackPanel>
         <Frame Grid.Column="1" Grid.Row="2" x:Name="frame" Margin="10" NavigationUIVisibility="Hidden"/>
         <Menu Grid.ColumnSpan="2" FontSize="18" VerticalAlignment="Center">
@@ -52,9 +53,33 @@
             <MenuItem Header="编辑"/>
         </Menu>
         <ToolBar Grid.Row="1" Grid.ColumnSpan="2">
-            <ToggleButton>Open</ToggleButton>
-            <Button>Close</Button>
+            <Button Style="{StaticResource ButtonSaveStyle}"></Button>
+            <Separator/>
+            <CheckBox FontWeight="Bold" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">Bold</CheckBox>
+            <CheckBox FontStyle="Italic" Checked="CheckBox_Checked_1" Unchecked="CheckBox_Unchecked_1">Italic</CheckBox>
+            <CheckBox>
+                <TextBlock TextDecorations="Underline">Underline</TextBlock>
+            </CheckBox>
+            <Separator/>
+            <ComboBox Width="50">
+                <ComboBoxItem IsSelected="True">100%</ComboBoxItem>
+                <ComboBoxItem>75%</ComboBoxItem>
+                <ComboBoxItem>50%</ComboBoxItem>
+                <ComboBoxItem>25%</ComboBoxItem>
+            </ComboBox>
+            <Separator/>
+            <RadioButton GroupName="g1" Checked="RadioButton_Checked">OP1</RadioButton>
+            <RadioButton GroupName="g1" Checked="RadioButton_Checked">OP2</RadioButton>
+            <RadioButton GroupName="g1" Checked="RadioButton_Checked">OP3</RadioButton>
+            <RadioButton GroupName="g1" Checked="RadioButton_Checked">OP4</RadioButton>
+            <Separator/>
+            <RadioButton>SX1</RadioButton>
+            <RadioButton>SX2</RadioButton>
+            <RadioButton>SX3</RadioButton>
+            <RadioButton>SX4</RadioButton>
+            <Separator/>
         </ToolBar>
+
         <StatusBar Grid.Row="3" Grid.ColumnSpan="2">
             
         </StatusBar>
