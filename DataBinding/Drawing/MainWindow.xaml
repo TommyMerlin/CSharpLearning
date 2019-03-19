@@ -24,6 +24,7 @@
                     <TreeViewItem Name="treeitem1" Tag="Pages/Page1.xaml" Header="Page1" GotFocus="TreeitemPage_GotFocus"/>
                     <TreeViewItem Tag="Pages/Page2.xaml" Header="Page2" GotFocus="TreeitemPage_GotFocus"/>
                     <TreeViewItem Tag="Pages/Page3.xaml" Header="Page3" GotFocus="TreeitemPage_GotFocus"/>
+                    <TreeViewItem Tag="Pages/Page4.xaml" Header="Page4" GotFocus="TreeitemPage_GotFocus"/>
                 </TreeViewItem>
             </TreeView>
             <TextBlock x:Name='txtblockTest' FontSize="20" TextAlignment="Center" TextWrapping="Wrap">

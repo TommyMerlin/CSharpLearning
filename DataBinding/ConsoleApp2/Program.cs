@@ -14,40 +14,60 @@ using System.Data;
 
 namespace Drawing
 {
-    class Program
+    public class Store
     {
+        public int coe { get; set; }
+        public int index { get; set; }
+    }
+
+
+    public class Program
+    {
+        public static void Operate(List<Store> stores, List<Store> stores1)
+        {
+
+        }
+
         static void Main(string[] args)
         {
-            Graph graph = new Graph();
-            DataTable dt = graph.DS.Tables["PathInfo"];
-            DataTable dtNode = graph.DS.Tables["NodeInfo"];
+            string[] list = Console.ReadLine().Split(' ');
+            string[] list1 = Console.ReadLine().Split(' ');
+            int[] nums = new int[list.Length];
+            int[] nums1 = new int[list1.Length];
 
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < list.Length; i++)
             {
-                double bnX = (Convert.ToDouble(dt.Rows[i][0])) / 100;
-                double bnY = (Convert.ToDouble(dt.Rows[i][1])) / 100;
-                double enX = (Convert.ToDouble(dt.Rows[i][2])) / 100;
-                double enY = (Convert.ToDouble(dt.Rows[i][3])) / 100;
+                nums[i] = Convert.ToInt32(list[i]);
+            }
+            List<Store> stores = new List<Store>();
+            for(int i = 0; i <= nums[0]; i++)
+            {
+                Store s = new Store()
+                {
+                    coe = nums[2 * i],
+                    index = nums[2 * i + 1]
 
-                //double bnX = Convert.ToDouble(dt.Rows[i][0]);
-                //double bnY = Convert.ToDouble(dt.Rows[i][1]);
-                //double enX = Convert.ToDouble(dt.Rows[i][2]);
-                //double enY = Convert.ToDouble(dt.Rows[i][3]);
-
-
-                Console.WriteLine("{0,-10}{1,-10}{2,-10}{3,-10}", bnX, bnY, enX, enY);
+                };
+                stores.Add(s);
             }
 
-            for (int i = 0; i < dtNode.Rows.Count; i++)
+            for (int i = 0; i < list1.Length; i++)
             {
-                double X = (Convert.ToDouble(dtNode.Rows[i][1])) / 100;
-                double Y = (Convert.ToDouble(dtNode.Rows[i][2])) / 100;
-
-                //double X = Convert.ToDouble(dt.Rows[i][1]);
-                //double Y = Convert.ToDouble(dt.Rows[i][2]);
-
-                Console.WriteLine("{0,-10}{1,-10}", X, Y);
+                nums1[i] = Convert.ToInt32(list1[i]);
             }
+            List<Store> stores1 = new List<Store>();
+            for (int i = 0; i <= nums[0]; i++)
+            {
+                Store s = new Store()
+                {
+                    coe = nums1[2 * i],
+                    index = nums1[2 * i + 1]
+
+                };
+                stores1.Add(s);
+            }
+
+            Operate(stores, stores1);
 
             Console.Read();
         }

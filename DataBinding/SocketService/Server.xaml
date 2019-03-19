@@ -20,6 +20,7 @@
         <Button x:Name="btnCreateClient" Content="新建客户端" Click="BtnCreateClient_Click" HorizontalAlignment="Left" Margin="340,215,0,0" VerticalAlignment="Top" Width="75"/>
         <ListBox x:Name="lbConnectedIP" HorizontalAlignment="Left" Height="178" Margin="450,56,0,0" VerticalAlignment="Top" Width="190"/>
         <Label Content="已连接的客户端IP:" HorizontalAlignment="Left" Margin="450,26,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnRefresh" Content="刷新" HorizontalAlignment="Left" Margin="573,29,0,0" VerticalAlignment="Top" Width="40" Click="BtnRefresh_Click"/>
 
     </Grid>
 </Window>

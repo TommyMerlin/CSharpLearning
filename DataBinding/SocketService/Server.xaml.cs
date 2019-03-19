@@ -228,5 +228,24 @@ namespace SocketService
             Client c = new Client();
             c.Show();
         }
+
+        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            lbConnectedIP.Items.Clear();
+
+            // 将每一个非空且处于连接状态的Socket添加到列表中
+            foreach (var socket in clientSockets)
+            {
+                if (socket.Value.Connected && socket.Value != null)
+                {
+                    string connectedClient = socket.Value.RemoteEndPoint.ToString();
+                    TextBlock txtblock = new TextBlock
+                    {
+                        Text = connectedClient
+                    };
+                    lbConnectedIP.Items.Add(txtblock);
+                }
+            }
+        }
     }
 }

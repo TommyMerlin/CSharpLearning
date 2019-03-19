@@ -25,6 +25,11 @@ namespace Drawing.Pages
         public Page1()
         {
             InitializeComponent();
+            
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
             Graph graph = new Graph();
             DataTable dt = graph.DS.Tables["PathInfo"];
             DataTable dtNode = graph.DS.Tables["NodeInfo"];
@@ -58,16 +63,6 @@ namespace Drawing.Pages
             path.Data = g;
             canvas1.Children.Add(path);
             grid1.ItemsSource = dt.DefaultView;
-        }
-
-        private void Copy_Click(object sender, RoutedEventArgs e)
-        {
-            txtbox1.Text += txtbox1.SelectedText;
-        }
-
-        private void Delete_Click(object sender, RoutedEventArgs e)
-        {
-            txtbox1.Text = txtbox1.SelectedText;
         }
     }
 }
