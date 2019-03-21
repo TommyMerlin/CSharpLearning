@@ -9,27 +9,29 @@
       Title="Page4">
 
     <Grid>
-        <Canvas>
-            <Button>
-                <Image>
-                    <Image.Source>
-                        <DrawingImage>
-                            <DrawingImage.Drawing>
-                                <DrawingGroup>
-                                    <GeometryDrawing>
-                                        <GeometryDrawing.Pen>
-                                            <Pen Thickness="3" Brush="Red"/>
-                                        </GeometryDrawing.Pen>
-                                        <GeometryDrawing.Geometry>
-                                            <EllipseGeometry Center="20 20" RadiusX="10" RadiusY="5"/>
-                                        </GeometryDrawing.Geometry>
-                                    </GeometryDrawing>
-                                </DrawingGroup>
-                            </DrawingImage.Drawing>
-                        </DrawingImage>
-                    </Image.Source>
-                </Image>
-            </Button>
-        </Canvas>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ToolBarTray Orientation="Vertical" Background="White">
+            <ToolBar ToolBarTray.IsLocked="True" Background="White">
+                <RadioButton Width="60" Height="60" x:Name="cmdSelectBeginNode">
+                    <StackPanel>
+                        <Image Source="/Drawing;component/Images/start.png" Width="30"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="8">选择起始点</TextBlock>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Width="60" Height="60" x:Name="cmdSelectEndNode">
+                    <StackPanel>
+                        <Image Source="/Drawing;component/Images/end.png" Width="30"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="8">选择目标点</TextBlock>
+                    </StackPanel>
+                </RadioButton>
+            </ToolBar>
+        </ToolBarTray>
+        <local:DrawingCanvas x:Name="drawingSurface" Background="White" ClipToBounds="True"
+                             MouseLeftButtonDown="DrawingSurface_MouseLeftButtonDown" Grid.Column="1">
+            
+        </local:DrawingCanvas>
     </Grid>
 </Page>

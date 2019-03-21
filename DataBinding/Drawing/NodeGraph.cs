@@ -187,7 +187,7 @@ namespace BLL.Astar
             get
             {
                 string selectnode = "select id,x,y from node";                        //获取节点信息                       
-                string selectpath = "select bnX,bnY,enX,enY from path";      //获取路径信息
+                string selectpath = "select * from path";      //获取路径信息
                 DataSet ds = new DataSet();
                 DataTable dt;
                 dt = DAL.SQLHelper.SelectSQLReturnDataTable(selectnode).Copy();
