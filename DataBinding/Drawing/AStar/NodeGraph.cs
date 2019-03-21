@@ -186,8 +186,10 @@ namespace BLL.Astar
         {
             get
             {
-                string selectnode = "select id,x,y from node";                        //获取节点信息                       
-                string selectpath = "select * from path";      //获取路径信息
+                //获取节点信息
+                string selectnode = "select id,x,y from node";                         
+                //获取路径信息
+                string selectpath = "select * from path";      
                 DataSet ds = new DataSet();
                 DataTable dt;
                 dt = DAL.SQLHelper.SelectSQLReturnDataTable(selectnode).Copy();
@@ -237,9 +239,9 @@ namespace BLL.Astar
             _Matrix = new int[Nodes, Nodes];                                        //创建 节点数×节点数 大小的二维数组
             foreach (DataRow row in dt.Rows)                                        //将查询到的数据填入矩阵
             {
-                int beginNode = (int)row[0];                                        //起始节点编号
-                int endNode = (int)row[1];                                          //终止节点编号
-                int weight = (int)row[2];                                           //路径权重
+                int beginNode = (int)row[1];                                        //起始节点编号
+                int endNode = (int)row[4];                                          //终止节点编号
+                int weight = (int)row[7];                                           //路径权重
                 if (CheckPathValue(beginNode, endNode, weight))
                 {
                     _Matrix[beginNode - 1, endNode - 1] = weight;                   //邻接矩阵[起点,终点] = 路径权重

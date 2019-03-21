@@ -36,10 +36,32 @@
             <!--<TextBlock FontSize="50" Canvas.Left="50" Canvas.Top="50">Hello Word</TextBlock>
             <Path Fill="LightBlue" Stroke="Red" StrokeThickness="3" Data="{StaticResource Geometry}"/>-->
         </Canvas>
-        <Canvas Grid.Row="1">
-            <DataGrid x:Name="grid1" ColumnWidth="150" Canvas.Bottom="0" Canvas.Left="40" Width="500" Height="250"/>
-            <TextBlock FontSize="20" Canvas.Left="585" TextWrapping="Wrap" Text="选中对象:" Canvas.Top="100" Height="25" Width="95"/>
-            <TextBlock x:Name="txtblockSelectedName" FontSize="20" Canvas.Left="585" TextWrapping="Wrap" Canvas.Top="135" Height="25" Width="95"/>
-        </Canvas>
+        <StackPanel Grid.Row="1">
+            <ToolBar HorizontalAlignment="Center" ToolBarTray.IsLocked="True">
+                <RadioButton Width="60" Height="60" x:Name="cmdSelectBeginNode">
+                    <StackPanel>
+                        <Image Source="/Drawing;component/Images/start.png" Width="30"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="8">选择起始点</TextBlock>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Width="60" Height="60" x:Name="cmdSelectEndNode">
+                    <StackPanel>
+                        <Image Source="/Drawing;component/Images/end.png" Width="30"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="8">选择目标点</TextBlock>
+                    </StackPanel>
+                </RadioButton>
+                <Button x:Name="btnPathPlanning" Click="BtnPathPlanning_Click">
+                    <StackPanel>
+                        <Image Source="/Drawing;component/Images/pathplanning.png" Width="30"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="8">路径规划</TextBlock>
+                    </StackPanel>
+                </Button>
+            </ToolBar>
+            <TextBlock FontSize="20" TextWrapping="Wrap" Text="起始点:" Height="25" Width="95"/>
+            <TextBlock x:Name="txtblockStartNode" FontSize="20" TextWrapping="Wrap" Height="25" Width="95"/>
+            <TextBlock FontSize="20" TextWrapping="Wrap" Text="目标点:" Height="25" Width="95"/>
+            <TextBlock x:Name="txtblockGoalNode" FontSize="20" TextWrapping="Wrap" Height="25" Width="95"/>
+            <TextBlock FontSize="15" x:Name="txtblockFinalPath" TextAlignment="Center" TextWrapping="Wrap" Height="25" Width="300"/>
+        </StackPanel>
     </Grid>
 </Page>
