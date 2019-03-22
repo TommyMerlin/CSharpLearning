@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
+using BLL.Astar;
 
 namespace Drawing.Pages
 {
@@ -31,11 +32,13 @@ namespace Drawing.Pages
         private List<Path> nodePaths = new List<Path>();
         private Path BeginNode;
         private Path EndNode;
+        private StoreHeap NodeList = new StoreHeap();
+        private List<Path> finalPaths = new List<Path>();
         
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            BLL.Astar.Graph graph = new BLL.Astar.Graph();
+            Graph graph = new Graph();
             DataTable dt = graph.DS.Tables["PathInfo"];
             DataTable dtNode = graph.DS.Tables["NodeInfo"];
 
@@ -51,7 +54,7 @@ namespace Drawing.Pages
                 LineGeometry line = new LineGeometry(sp, ep);
                 path.Data = line;
                 path.Name = "路径_" + dt.Rows[i][0].ToString();
-                path.ToolTip = "路径_" + dt.Rows[i][0].ToString();
+                path.ToolTip = "路径" + dt.Rows[i][0].ToString();
                 //path.MouseDown += Path_MouseDown;
                 pathPaths.Add(path);
                 canvas1.Children.Add(path);
@@ -72,7 +75,7 @@ namespace Drawing.Pages
                 EllipseGeometry ellipse = new EllipseGeometry(p, 10, 10);
                 path.Data = ellipse;
                 path.Name = "节点_" + dt.Rows[i][0].ToString();
-                path.ToolTip = "节点_" + dt.Rows[i][0].ToString();
+                path.ToolTip = "节点" + dt.Rows[i][0].ToString();
                 path.MouseDown += Path_MouseDown;
                 pathPaths.Add(path);
                 canvas1.Children.Add(path);
@@ -111,11 +114,38 @@ namespace Drawing.Pages
 
         private void BtnPathPlanning_Click(object sender, RoutedEventArgs e)
         {
-            BLL.Astar.Graph graph = new BLL.Astar.Graph();
-            BLL.Astar.AStar aStar = new BLL.Astar.AStar(graph);
+            Graph graph = new Graph();
+            AStar aStar = new AStar(graph);
             int snId = Convert.ToInt32(txtblockStartNode.Text);
             int gnId = Convert.ToInt32(txtblockGoalNode.Text);
             txtblockFinalPath.Text = aStar.GetFinalPath(snId, gnId);
+            StoreHeap heap = aStar.PathPanning(snId, gnId);
+            if(finalPaths.Count > 0)
+            {
+                foreach(var p in finalPaths)
+                {
+                    canvas1.Children.Remove(p);
+                }
+                finalPaths.Clear();
+            }
+            NodeList = heap;
+
+            for(int i = 0; i < NodeList.Count-1; i++)
+            {
+                Path path = new Path();
+                double bnX = (Convert.ToDouble(NodeList.NodeList[i].X)) / 200;
+                double bnY = (Convert.ToDouble(NodeList.NodeList[i].Y)) / 200;
+                double enX = (Convert.ToDouble(NodeList.NodeList[i+1].X)) / 200;
+                double enY = (Convert.ToDouble(NodeList.NodeList[i+1].Y)) / 200;
+                Point sp = new Point(bnX, bnY);
+                Point ep = new Point(enX, enY);
+                LineGeometry line = new LineGeometry(sp, ep);
+                path.Data = line;
+                path.Stroke = Brushes.Orange;
+                path.Fill = Brushes.Orange;
+                finalPaths.Add(path);
+                canvas1.Children.Add(path);
+            }
         }
     }
 }
