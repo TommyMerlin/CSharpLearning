@@ -23,3 +23,5 @@ C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Pages\P
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Pages\Page4.g.cs
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Pages\Page4.baml
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Window1.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\Drawing\obj\Debug\Window1.baml

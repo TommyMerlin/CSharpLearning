@@ -82,5 +82,10 @@ namespace Drawing
             Hyperlink link = sender as Hyperlink;
             Process.Start(new ProcessStartInfo(link.NavigateUri.AbsoluteUri));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello");
+        }
     }
 }

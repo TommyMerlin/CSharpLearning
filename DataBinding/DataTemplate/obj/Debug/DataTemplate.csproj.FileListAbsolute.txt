@@ -1,0 +1,17 @@
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\bin\Debug\DataTemplate.exe.config
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\bin\Debug\DataTemplate.exe
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\bin\Debug\DataTemplate.pdb
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\DataTemplate.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\MainWindow.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\App.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\DataTemplate_MarkupCompile.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\DataTemplate_MarkupCompile.lref
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\App.baml
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\MainWindow.baml
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\DataTemplate.g.resources
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\DataTemplate.Properties.Resources.resources
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\DataTemplate.csproj.GenerateResource.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\DataTemplate.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\DataTemplate.exe
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\DataTemplate\obj\Debug\DataTemplate.pdb

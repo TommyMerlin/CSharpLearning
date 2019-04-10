@@ -3,16 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MianWindow" Height="360" Width="500">
     <Grid>
-        <Button x:Name="btnOpen" Content="打开" HorizontalAlignment="Left" Margin="25,21,0,0" VerticalAlignment="Top" Width="75" Click="BtnOpen_Click"/>
-        <ListBox x:Name="lbMusic" HorizontalAlignment="Left" Height="195" Margin="25,70,0,0" VerticalAlignment="Top" Width="320" MouseDoubleClick="LbMusic_MouseDoubleClick"/>
-        <Button x:Name="btnUp" Content="UP" HorizontalAlignment="Left" Margin="360,70,0,0" VerticalAlignment="Top" Width="75" Click="BtnUp_Click"/>
-        <Button x:Name="btnDown" Content="DOWN" HorizontalAlignment="Left" Margin="360,125,0,0" VerticalAlignment="Top" Width="75" Click="BtnDown_Click"/>
-        <Button x:Name="btnOpenFile" Content="打开文件" HorizontalAlignment="Left" Margin="140,21,0,0" VerticalAlignment="Top" Width="75" Click="BtnOpenFile_Click"/>
-        <Label x:Name="label1" Content="" HorizontalAlignment="Left" Margin="25,280,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="" HorizontalAlignment="Left" Margin="100,280,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label3" Content="" HorizontalAlignment="Left" Margin="175,280,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txtblockMsg" HorizontalAlignment="Left" Margin="25,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="25"/>
-        <Button x:Name="btnMsg" Content="MSG" HorizontalAlignment="Left" Margin="360,180,0,0" VerticalAlignment="Top" Width="75" Click="BtnMsg_Click"/>
-
+        
     </Grid>
 </Window>

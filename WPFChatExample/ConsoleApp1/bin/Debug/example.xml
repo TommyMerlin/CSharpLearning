@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<protocal>
+  <file name="1.png" mode="send" port="8005" ip="127.0.0.1">
+    <length name="1.png" />
+  </file>
+</protocal>

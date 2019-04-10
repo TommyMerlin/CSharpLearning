@@ -1,0 +1,11 @@
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\bin\Debug\ConsoleApp1.exe
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\bin\Debug\ConsoleApp1.pdb
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\bin\Debug\ConsoleApp1.exe.config
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\obj\Debug\ConsoleApp2.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CopyComplete
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\7ommy\source\repos\WPFChatExample\ConsoleApp2\obj\Debug\ConsoleApp2.pdb

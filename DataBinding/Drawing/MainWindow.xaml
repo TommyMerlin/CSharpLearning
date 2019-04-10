@@ -31,6 +31,8 @@
                 <Hyperlink Name="uriPage2" NavigateUri="https://www.baidu.com" Click="Hyperlink_Click">here</Hyperlink>
                 to go to Baidu.
             </TextBlock>
+            <Button Margin="30 5" Style="{StaticResource ButtonStyle}" Click="Button_Click">Button</Button>
+            
         </StackPanel>
         <Frame Grid.Column="1" Grid.Row="2" x:Name="frame" Margin="10" NavigationUIVisibility="Hidden"/>
         <Menu Grid.ColumnSpan="2" FontSize="18" VerticalAlignment="Center">
