@@ -14,3 +14,5 @@ C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\WpfApp1\obj\Debug\WpfApp1
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\WpfApp1\obj\Debug\WpfApp1.pdb
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\WpfApp1\obj\Debug\Interop.AutoCAD.dll
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\WpfApp1\obj\Debug\WpfApp1.csproj.ResolveComReference.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\WpfApp1\bin\Debug\Panuon.UI.dll
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete

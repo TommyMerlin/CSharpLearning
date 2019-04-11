@@ -70,6 +70,7 @@
     <Compile Include="Client.xaml.cs">
       <DependentUpon>Client.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProtocolHelper.cs" />
     <Compile Include="Server.xaml.cs">
       <DependentUpon>Server.xaml</DependentUpon>
       <SubType>Code</SubType>

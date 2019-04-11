@@ -97,15 +97,46 @@ namespace SocketService
         public void ReceiveMsg(object clientSocket)
         {
             Socket connection = (Socket)clientSocket;
+            byte[] partialBuffer = null;
             while (true)
             {
+                
                 try
                 {
-                    byte[] result = new byte[1024];
-                    //通过clientSocket接收数据  
+                    byte[] result = new byte[2048];
+
+                    ////通过clientSocket接收数据  
+                    //int receiveNumber = connection.Receive(result);
+                    ////把接受的数据从字节类型转化为字符类型
+                    //string recStr = Encoding.Unicode.GetString(result, 0, receiveNumber);
+
+
                     int receiveNumber = connection.Receive(result);
-                    //把接受的数据从字节类型转化为字符类型
-                    string recStr = Encoding.Unicode.GetString(result, 0, receiveNumber);
+                    byte[] buffer = new byte[receiveNumber];
+                    Buffer.BlockCopy(result, 0, buffer, 0, receiveNumber);
+
+                    if (partialBuffer != null)
+                    {
+                        receiveNumber += partialBuffer.Length;
+                        buffer = partialBuffer.Concat(buffer).ToArray();
+                    }
+
+                    ProtocolHelper.MMO_MemoryStream ms = new ProtocolHelper.MMO_MemoryStream(buffer);
+                    int length = ms.ReadUShort();
+                    ms.Close();
+
+                    if (length < buffer.Length)
+                    {
+                        partialBuffer = buffer;
+                        continue;
+                    }
+
+
+                    partialBuffer = null;
+                    byte[] unpackedMsg = ProtocolHelper.UnpackData(buffer);
+                    string recStr = Encoding.Unicode.GetString(unpackedMsg, 0, unpackedMsg.Length);
+
+
 
                     //获取当前客户端的ip地址
                     IPAddress clientIP = (connection.RemoteEndPoint as IPEndPoint).Address;
@@ -205,7 +236,9 @@ namespace SocketService
                     {
                         if (socket.Value != null && socket.Value.Connected)
                         {
-                            socket.Value.Send(Encoding.Unicode.GetBytes(message));
+                            //socket.Value.Send(Encoding.Unicode.GetBytes(message));
+                            byte[] buffer = Encoding.Unicode.GetBytes(message);
+
                         }
 
                     }

@@ -105,16 +105,32 @@ namespace SocketService
         /// </summary>
         private void BtnSend_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 string message = txtboxMessage.Text;
-                txtboxInfo.Text = $"【发送消息】 {message}\r\n" + txtboxInfo.Text;
-                clientSocket.Send(Encoding.Unicode.GetBytes(message));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                
+
+                byte[] buffer = Encoding.Unicode.GetBytes(message);
+
+                for (int i = 0; i < 2; i++)
+                {
+                    txtboxInfo.Text = $"【发送消息】 {message}\r\n" + txtboxInfo.Text;
+                    buffer = ProtocolHelper.PackData(buffer);
+                    clientSocket.Send(buffer);
+
+                }
+
+                //for (int i = 0; i < 100; i++)
+                //{
+                //    txtboxInfo.Text = $"【发送消息】 {message}\r\n" + txtboxInfo.Text;
+                //    clientSocket.Send(buffer);
+                //}
+                //clientSocket.Send(buffer);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         /// <summary>
