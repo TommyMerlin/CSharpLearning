@@ -23,51 +23,23 @@ namespace Drawing
 
     public class Program
     {
-        public static void Operate(List<Store> stores, List<Store> stores1)
+        static void Main()
         {
-
-        }
-
-        static void Main(string[] args)
-        {
-            string[] list = Console.ReadLine().Split(' ');
-            string[] list1 = Console.ReadLine().Split(' ');
-            int[] nums = new int[list.Length];
-            int[] nums1 = new int[list1.Length];
-
-            for (int i = 0; i < list.Length; i++)
+            
+            Task task = Task.Run(() =>
             {
-                nums[i] = Convert.ToInt32(list[i]);
-            }
-            List<Store> stores = new List<Store>();
-            for(int i = 0; i <= nums[0]; i++)
-            {
-                Store s = new Store()
+                for (int i = 0; i < 1000; i++)
                 {
-                    coe = nums[2 * i],
-                    index = nums[2 * i + 1]
-
-                };
-                stores.Add(s);
+                    Console.Write("-");
+                }
             }
+            );
 
-            for (int i = 0; i < list1.Length; i++)
+            for (int i = 0; i < 1000; i++)
             {
-                nums1[i] = Convert.ToInt32(list1[i]);
+                Console.Write("+");
             }
-            List<Store> stores1 = new List<Store>();
-            for (int i = 0; i <= nums[0]; i++)
-            {
-                Store s = new Store()
-                {
-                    coe = nums1[2 * i],
-                    index = nums1[2 * i + 1]
-
-                };
-                stores1.Add(s);
-            }
-
-            Operate(stores, stores1);
+            //task.Wait();
 
             Console.Read();
         }

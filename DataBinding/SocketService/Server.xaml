@@ -9,7 +9,7 @@
     <Grid>
         <TextBox x:Name="txtboxMessage" HorizontalAlignment="Left" Height="23" Margin="40,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
         <Button x:Name="btnSend" Content="发送" HorizontalAlignment="Left" Margin="340,137,0,0" VerticalAlignment="Top" Width="75" Click="BtnSend_Click"/>
-        <TextBox x:Name="txtboxIP" HorizontalAlignment="Left" Height="23" Margin="95,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="127.0.0.1"/>
+        <TextBox x:Name="txtboxIP" HorizontalAlignment="Left" Height="23" Margin="95,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="172.16.24.161"/>
         <Label Content="IP:" HorizontalAlignment="Left" Margin="40,179,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtboxPort" HorizontalAlignment="Left" Height="23" Margin="95,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="9500"/>
         <Label Content="端口:" HorizontalAlignment="Left" Margin="40,209,0,0" VerticalAlignment="Top"/>

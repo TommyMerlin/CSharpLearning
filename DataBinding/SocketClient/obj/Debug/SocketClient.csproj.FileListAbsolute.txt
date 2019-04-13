@@ -12,3 +12,7 @@ C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\SocketClient\obj\Debug\So
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\SocketClient\obj\Debug\SocketClient.csprojAssemblyReference.cache
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\SocketClient\obj\Debug\Client.baml
 C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\SocketClient\obj\Debug\Client.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\SocketClient\bin\Debug\SocketService.exe
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\SocketClient\bin\Debug\SocketService.pdb
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\SocketClient\bin\Debug\SocketService.exe.config
+C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\SocketClient\obj\Debug\SocketClient.csproj.CopyComplete

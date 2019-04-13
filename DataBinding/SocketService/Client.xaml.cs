@@ -66,6 +66,70 @@ namespace SocketService
                     break;
                 }
             }
+
+            byte[] partialBuffer = null;
+            while (true)
+            {
+
+                try
+                {
+                    byte[] result = new byte[2048];
+
+                    ////通过clientSocket接收数据  
+                    //int receiveNumber = connection.Receive(result);
+                    ////把接受的数据从字节类型转化为字符类型
+                    //string recStr = Encoding.Unicode.GetString(result, 0, receiveNumber);
+
+
+                    int receiveNumber = clientSocket.Receive(result);
+                    byte[] buffer = new byte[receiveNumber];
+                    Buffer.BlockCopy(result, 0, buffer, 0, receiveNumber);
+
+                    if (partialBuffer != null)
+                    {
+                        receiveNumber += partialBuffer.Length;
+                        buffer = partialBuffer.Concat(buffer).ToArray();
+                    }
+
+                    ProtocolHelper.MMO_MemoryStream ms = new ProtocolHelper.MMO_MemoryStream(buffer);
+                    int length = ms.ReadUShort();
+                    ms.Close();
+
+                    if (length < buffer.Length)
+                    {
+                        partialBuffer = buffer;
+                        continue;
+                    }
+
+
+                    partialBuffer = null;
+                    byte[] unpackedMsg = ProtocolHelper.UnpackData(buffer);
+                    string recStr = Encoding.Unicode.GetString(unpackedMsg, 0, unpackedMsg.Length);
+
+
+
+                    //获取当前客户端的ip地址
+                    IPAddress clientIP = (clientSocket.RemoteEndPoint as IPEndPoint).Address;
+                    //获取客户端端口
+                    int clientPort = (clientSocket.RemoteEndPoint as IPEndPoint).Port;
+                    string sendStr = clientIP + ":" + clientPort.ToString() + "--->" + recStr;
+                    //显示内容
+                    txtboxInfo.Dispatcher.BeginInvoke(
+
+                            new Action(() => { txtboxInfo.Text = $"【接收信息】 {sendStr}\r\n" + txtboxInfo.Text; }), null);
+
+                }
+                catch (Exception ex)
+                {
+                    // 出现异常，关闭连接
+                    clientSocket.Shutdown(SocketShutdown.Both);
+                    clientSocket.Close();
+                    txtboxInfo.Dispatcher.BeginInvoke(
+
+                            new Action(() => { txtboxInfo.Text = "\r\n" + $"【信息接收异常】 {ex.Message}\r\n" + txtboxInfo.Text; }), null);
+                    break;
+                }
+            }
         }
 
         /// <summary>
@@ -105,20 +169,17 @@ namespace SocketService
         /// </summary>
         private void BtnSend_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 string message = txtboxMessage.Text;
                 
 
                 byte[] buffer = Encoding.Unicode.GetBytes(message);
 
-                for (int i = 0; i < 2; i++)
-                {
-                    txtboxInfo.Text = $"【发送消息】 {message}\r\n" + txtboxInfo.Text;
-                    buffer = ProtocolHelper.PackData(buffer);
-                    clientSocket.Send(buffer);
-
-                }
+                
+                txtboxInfo.Text = $"【发送消息】 {message}\r\n" + txtboxInfo.Text;
+                buffer = ProtocolHelper.PackData(buffer);
+                clientSocket.Send(buffer);
 
                 //for (int i = 0; i < 100; i++)
                 //{
@@ -126,11 +187,11 @@ namespace SocketService
                 //    clientSocket.Send(buffer);
                 //}
                 //clientSocket.Send(buffer);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /// <summary>

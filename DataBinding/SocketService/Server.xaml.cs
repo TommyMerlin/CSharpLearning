@@ -148,6 +148,9 @@ namespace SocketService
 
                             new Action(() => { txtboxInfo.Text = $"【接收信息】 {sendStr}\r\n" + txtboxInfo.Text; }), null);
 
+                    unpackedMsg = ProtocolHelper.PackData(unpackedMsg);
+                    connection.Send(buffer);
+
                 }
                 catch (Exception ex)
                 {
@@ -238,7 +241,8 @@ namespace SocketService
                         {
                             //socket.Value.Send(Encoding.Unicode.GetBytes(message));
                             byte[] buffer = Encoding.Unicode.GetBytes(message);
-
+                            buffer = ProtocolHelper.PackData(buffer);
+                            socket.Value.Send(buffer);
                         }
 
                     }
