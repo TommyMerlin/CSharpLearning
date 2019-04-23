@@ -1,0 +1,24 @@
+﻿<Page x:Class="BindingProgram.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BindingProgram"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <Button x:Name="btn1" Width="150" Margin="10" FontSize="20">Button1</Button>
+            <Button Width="150" Margin="10" FontSize="20">Button2</Button>
+            <Button Width="150" Margin="10" FontSize="20">Button3</Button>
+            <Button Width="150" Margin="10" FontSize="20">Button4</Button>
+            <Button Width="150" Margin="10" FontSize="20">Button5</Button>
+            <Button Width="150" Margin="10" FontSize="20">Button6</Button>
+            <Button Width="150" Margin="10" FontSize="20">Button7</Button>
+            <Button Width="150" Margin="10" FontSize="20">Button8</Button>
+            <Button Width="150" Margin="10" FontSize="20">Button9</Button>
+        </StackPanel>
+    </Grid>
+</Page>

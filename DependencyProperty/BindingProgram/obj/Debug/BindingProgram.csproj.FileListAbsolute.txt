@@ -13,3 +13,7 @@ C:\Users\7ommy\source\repos\CSharpLearning\DependencyProperty\BindingProgram\obj
 C:\Users\7ommy\source\repos\CSharpLearning\DependencyProperty\BindingProgram\obj\Debug\BindingProgram.exe
 C:\Users\7ommy\source\repos\CSharpLearning\DependencyProperty\BindingProgram\obj\Debug\BindingProgram.pdb
 C:\Users\7ommy\source\repos\CSharpLearning\DependencyProperty\BindingProgram\obj\Debug\BindingProgram.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\CSharpLearning\DependencyProperty\BindingProgram\obj\Debug\Page1.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DependencyProperty\BindingProgram\obj\Debug\Page1.baml
+C:\Users\7ommy\source\repos\CSharpLearning\DependencyProperty\BindingProgram\obj\Debug\Window1.g.cs
+C:\Users\7ommy\source\repos\CSharpLearning\DependencyProperty\BindingProgram\obj\Debug\Window1.baml

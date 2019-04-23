@@ -5,11 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BindingProgram"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="auto" Width="auto">
     <Grid x:Name="gridRoot">
         <StackPanel>
-            <TextBox x:Name="txtboxName" Margin="20" Width="400" FontSize="20" TextAlignment="Center"></TextBox>
+            <!--<TextBlock Text="{Binding Age}" Width="50" FontSize="20" Margin="0 20 0 0" TextTrimming="WordEllipsis"/>-->
+            <TextBox Text="{Binding Name}" Width="{Binding Width}" x:Name="txtboxName" Margin="20" FontSize="20" TextAlignment="Center"></TextBox>
             <Button x:Name="btnChangeName" FontSize="20" Width="150" Click="BtnChangeName_Click">Change Name</Button>
+            <!--<Frame x:Name="frame" Height="auto"/>-->
+            <TextBox x:Name="txtboxStudentId" Width="100" FontSize="20" Margin="10"/>
+            <ListBox x:Name="lbStudents" Width="400" Height="300">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding Name}" Width="100" TextAlignment="Center"/>
+                            <TextBlock Text="{Binding Id}" Width="100" TextAlignment="Center"/>
+                            <TextBlock Text="{Binding Age}" Width="100" TextAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>

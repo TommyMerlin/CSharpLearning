@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,9 @@ namespace BindingProgram
             }
         }
 
+        public int Age { get; set; }
+        public int Id { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 
@@ -42,27 +46,37 @@ namespace BindingProgram
     {
         private Student stu;
         List<string> strs;
+        //List<Student> stuList;
+        ObservableCollection<Student> StuList;
 
         public MainWindow()
         {
             InitializeComponent();
-            stu = new Student() { Name = "Tom" };
-            
-            strs = new List<string>() { "Tom", "Tim" };
 
-            //txtboxName.SetBinding(
-            //    TextBox.TextProperty,
-            //    new Binding("Name")
-            //    { Source = stu, Mode = BindingMode.OneWay }
-            //    );
-            gridRoot.DataContext = stu;
-            //txtboxName.SetBinding(TextBox.TextProperty, new Binding("Name"));
+            StuList = new ObservableCollection<Student>()
+            {
+                new Student(){Name = "Tom", Age=12, Id=10001},
+                new Student(){Name = "Amy", Age=21, Id=10002},
+                new Student(){Name = "Sheldon", Age=22, Id=10003},
+                new Student(){Name = "Lenerd", Age=23, Id=10004},
+                new Student(){Name = "Howard", Age=24, Id=10005},
+                new Student(){Name = "Penny", Age=25, Id=10006},
+                new Student(){Name = "Raj", Age=26, Id=10007}
+            };
+
+            lbStudents.ItemsSource = StuList;
+            //lbStudents.DisplayMemberPath = "Name";
+
+            txtboxStudentId.SetBinding(TextBox.TextProperty, new Binding("SelectedItem.Id") { Source = this.lbStudents });
         }
 
+        int StuId = 10008;
         private void BtnChangeName_Click(object sender, RoutedEventArgs e)
         {
-            stu.Name += "Tom";
+            //stu.Name += "Tom";
             //strs.Add("ZJU");
+            StuList.Add(new Student() { Name = "May", Age = 12, Id = StuId });
+            StuId++;
         }
     }
 }
