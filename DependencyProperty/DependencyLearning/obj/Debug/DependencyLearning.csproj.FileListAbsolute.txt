@@ -1,0 +1,16 @@
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\bin\Debug\DependencyLearning.exe.config
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\bin\Debug\DependencyLearning.exe
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\bin\Debug\DependencyLearning.pdb
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\DependencyLearning.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\MainWindow.g.cs
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\App.g.cs
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\DependencyLearning_MarkupCompile.cache
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\DependencyLearning_MarkupCompile.lref
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\MainWindow.baml
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\DependencyLearning.g.resources
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\DependencyLearning.Properties.Resources.resources
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\DependencyLearning.csproj.GenerateResource.cache
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\DependencyLearning.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\DependencyLearning.exe
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\DependencyLearning.pdb
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyLearning\obj\Debug\GeneratedInternalTypeHelper.g.cs

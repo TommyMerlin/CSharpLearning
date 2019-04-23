@@ -14,32 +14,33 @@ using System.Data;
 
 namespace Drawing
 {
-    public class Store
+    public class Longitude
     {
-        public int coe { get; set; }
-        public int index { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+
+        public Longitude(int x,int y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        public static Longitude operator +(Longitude target1,Longitude target2)
+        {
+            Longitude longitude = new Longitude(target1.X + target2.X, target1.Y + target2.Y);
+            
+            return longitude;
+        }
     }
-
-
+    
     public class Program
     {
         static void Main()
         {
-            
-            Task task = Task.Run(() =>
-            {
-                for (int i = 0; i < 1000; i++)
-                {
-                    Console.Write("-");
-                }
-            }
-            );
-
-            for (int i = 0; i < 1000; i++)
-            {
-                Console.Write("+");
-            }
-            //task.Wait();
+            Longitude l1 = new Longitude(1, 1);
+            Longitude l2 = new Longitude(1, 1);
+            l1 = l1 + l2;
+            Console.WriteLine($"{l1.X} {l1.Y}");
 
             Console.Read();
         }

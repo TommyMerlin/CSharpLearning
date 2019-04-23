@@ -1,0 +1,5 @@
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyProperty\obj\Debug\DependencyProperty.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyProperty\obj\Debug\MainWindow.g.cs
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyProperty\obj\Debug\App.g.cs
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyProperty\obj\Debug\DependencyProperty_MarkupCompile.cache
+C:\Users\7ommy\source\repos\DependencyProperty\DependencyProperty\obj\Debug\DependencyProperty_MarkupCompile.lref

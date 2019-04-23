@@ -13,57 +13,183 @@ using System.IO;
 
 namespace SocketService
 {
+    /// <summary>
+    /// 发送消息的数据类型
+    /// </summary>
+    public enum MessageType
+    {
+        /// <summary>
+        /// 信息类型
+        /// </summary>
+        infomation = 0,
+
+        /// <summary>
+        /// 命令类型
+        /// </summary>
+        command = 1,
+
+        clientName = 2,
+    }
+
     class ProtocolHelper
     {
+        //用于存储剩余未解析的字节数
+        private List<byte> LBuff = new List<byte>(2);
+        //默认是Unicode的编码格式
+        private UnicodeEncoding unicode = new UnicodeEncoding();
+
+        //包头1
+        const Int16 head1 = 0x55;
+        //包头2
+        const Int16 head2 = 0xAA;
+        //字节数常量 两个包头4个字节，一个消息id4个字节，封装消息长度 int32 4个字节
+        const Int32 ConstLength = 8;
+
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool flag)
+        {
+            if (flag)
+            {
+                if (this.unicode is IDisposable disposable) { disposable.Dispose(); }
+            }
+        }
+
         /// <summary>
         /// 封包
         /// </summary>
         /// <param name="data">待处理的数据</param>
         /// <returns></returns>
-        public static byte[] PackData(byte[] data)
+        public byte[] PackData(TSocketMessage msg, MessageType msgType)
         {
+            // 封包后返回的数据
             byte[] retBuffer = null;
-            // 获取经异或加密后的数据
-            data = SecurityUtil.Xor(data);
-            // 获取 Crc 冗余校验码
-            ushort crc = Crc16.CalculateCrc16(data);
-
+            // 待封包的数据
+            byte[] msgBuffer = msg.MsgBuffer;
+            // 数据类型
+            byte messageType = (byte)msgType;
             using (MMO_MemoryStream ms = new MMO_MemoryStream())
             {
-                // 写入包体长度信息
-                ms.WriteUShort((ushort)(data.Length + 4));
-                // 写入 Crc 冗余校验码
-                ms.WriteUShort(crc);
-                // 写入 Xor 加密后的数据
-                ms.Write(data, 0, data.Length);
+                //封装包头
+                ms.WriteShort(head1);
+                ms.WriteShort(head2);
+                //包协议
+                if (msgBuffer != null)
+                {
+                    // 写入数据类型
+                    ms.WriteByte(messageType);
+                    // 写入包体长度信息
+                    ms.WriteInt((int)(msgBuffer.Length + 2));
+                    // 获取经异或加密后的数据
+                    msgBuffer = SecurityUtil.Xor(msgBuffer);
+                    // 获取 Crc 冗余校验码
+                    ushort crc = Crc16.CalculateCrc16(msgBuffer);
+                    // 写入 Crc 冗余校验码
+                    ms.WriteUShort(crc);
+                    // 写入 Xor 加密后的数据
+                    ms.Write(msgBuffer, 0, msgBuffer.Length);
+                }
+                else
+                {
+                    ms.WriteInt(0);
+                }
                 // 获取处理后的完整数据包
                 retBuffer = ms.ToArray();
             }
             return retBuffer;
         }
 
-        public static byte[] UnpackData(byte[] data)
+        /// <summary>
+        /// 拆包
+        /// </summary>
+        /// <param name="buff">缓存区数据</param>
+        /// <param name="len">数据长度</param>
+        /// <returns></returns>
+        public List<TSocketMessage> UnpackData(byte[] buff, int len)
         {
-            // 存放实际数据包体
-            byte[] bufferNew = new byte[data.Length - 4];
+            // 拷贝本次有效的字节
+            byte[] _b = new byte[len];
+            Array.Copy(buff, 0, _b, 0, _b.Length);
+            buff = _b;
+
+            if (this.LBuff.Count > 0)
+            {
+                // 拷贝之前遗留的字节
+                this.LBuff.AddRange(_b);
+                buff = this.LBuff.ToArray();
+                this.LBuff.Clear();
+                this.LBuff = new List<byte>(2);
+            }
+
+            List<TSocketMessage> list = new List<TSocketMessage>();
+
             // 存放 data 的 Crc 校验码
             ushort crc = 0;
-            // 获取实际数据包体
-            using (MMO_MemoryStream ms = new MMO_MemoryStream(data))
-            {
-                ushort length = ms.ReadUShort();
-                crc = ms.ReadUShort();
-                ms.Read(bufferNew, 0, bufferNew.Length);
-            }
-            int newCrc = Crc16.CalculateCrc16(bufferNew);
 
-            if (newCrc == crc)
+            try
             {
-                bufferNew = SecurityUtil.Xor(bufferNew);
-                return bufferNew;
-            }
+                // 获取实际数据包体
+                using (MMO_MemoryStream ms = new MMO_MemoryStream(buff))
+                {
+                    byte[] _buff;
+                Label_00983:
 
-            return null;
+                    #region 包头读取
+                    // 循环读取包头
+                    // 判断本次解析的字节是否满足常量字节数
+                    if (ms.Length - ms.Position < ConstLength)
+                    {
+                        _buff = ms.ReadBytes((int)(ms.Length - ms.Position));
+                        this.LBuff.AddRange(_buff);
+                        return list;
+                    }
+                    short head11 = ms.ReadShort();
+                    short head22 = ms.ReadShort();
+
+                    // 如果未找到包头，则将字节流从上一次读取的位置向后移动一字节
+                    if (!(head1 == head11 && head2 == head22))
+                    {
+                        long newPosition = ms.Seek(-3, SeekOrigin.Current);
+                        goto Label_00983;
+                    }
+                    #endregion
+
+                    // 数据类型
+                    byte msgType = (byte)ms.ReadByte();
+                    // 数据体长度
+                    int offset = ms.ReadInt();
+
+                    #region 包解析
+                    // 剩余字节数大于本次需要读取的字节数
+                    if (offset <= (ms.Length - ms.Position))
+                    {
+                        crc = ms.ReadUShort();
+                        _buff = ms.ReadBytes(offset - 2);
+                        int newCrc = Crc16.CalculateCrc16(_buff);
+                        if (newCrc == crc)
+                        {
+                            _buff = SecurityUtil.Xor(_buff);
+                            list.Add(new TSocketMessage(_buff, msgType));
+                        }
+                    }
+                    // 剩余字节数刚好小于本次读取的字节数,先存起来,等待接受剩余字节数一起解析
+                    else
+                    {
+                        _buff = ms.ReadBytes((int)(ms.Length - ms.Position));
+                        this.LBuff.AddRange(_buff);
+                    }
+                    #endregion
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("数据读取错误:" + ex.Message);
+            }
+            return list;
         }
 
         public sealed class SecurityUtil
@@ -271,7 +397,7 @@ namespace SocketService
                 byte[] arr = BitConverter.GetBytes(value);
                 base.Write(arr, 0, arr.Length);
             }
-
+            
             /// <summary>
             /// 从流中读取一个Double数据
             /// </summary>
@@ -318,27 +444,36 @@ namespace SocketService
             /// 从流中读取一个string数组
             /// </summary>
             /// <returns></returns>
-            public string ReadUTF8String()
+            public string ReadUnicodeString()
             {
                 ushort len = this.ReadUShort();
                 byte[] arr = new byte[len];
                 base.Read(arr, 0, len);
-                return Encoding.UTF8.GetString(arr);
+                return Encoding.Unicode.GetString(arr);
             }
             /// <summary>
             /// 把一个字符串数字写入流
             /// </summary>
             /// <param name="str"></param>
-            public void WriteUTF8String(string str)
+            public void WriteUnicodeString(string str)
             {
                 if (string.IsNullOrEmpty(str)) return;
-                byte[] arr = Encoding.UTF8.GetBytes(str);
+                byte[] arr = Encoding.Unicode.GetBytes(str);
                 if (arr.Length > 65535)
                 {
                     throw new InvalidCastException("字符串超出范围");
                 }
                 this.WriteUShort((ushort)arr.Length);
                 base.Write(arr, 0, arr.Length);
+            }
+            #endregion
+
+            #region Bytes数据读取
+            public byte[] ReadBytes(int length)
+            {
+                byte[] arr = new byte[length];
+                base.Read(arr, 0, length);
+                return arr;
             }
             #endregion
         }

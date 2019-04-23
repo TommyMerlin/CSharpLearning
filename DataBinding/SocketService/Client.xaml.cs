@@ -29,107 +29,107 @@ namespace SocketService
 
         }
 
-        private static Socket clientSocket = null;    //客户端Socket
+        private static TSocketClient clientSocket = null;    //客户端Socket
 
         /// <summary>
         /// 接收服务端发来的信息
         /// </summary>
         public void ReceiveMsg()
         {
-            while (true)
-            {
-                try
-                {
-                    byte[] result = new byte[1024];
-                    //通过clientSocket接收数据  
-                    int receiveNumber = clientSocket.Receive(result);
-                    //把接受的数据从字节类型转化为字符类型
-                    string recStr = Encoding.Unicode.GetString(result, 0, receiveNumber);
+            //while (true)
+            //{
+            //    try
+            //    {
+            //        byte[] result = new byte[1024];
+            //        //通过clientSocket接收数据  
+            //        int receiveNumber = clientSocket.Receive(result);
+            //        //把接受的数据从字节类型转化为字符类型
+            //        string recStr = Encoding.Unicode.GetString(result, 0, receiveNumber);
 
 
-                    //获取当前客户端的ip地址
-                    IPAddress clientIP = (clientSocket.RemoteEndPoint as IPEndPoint).Address;
-                    //获取客户端端口
-                    int clientPort = (clientSocket.RemoteEndPoint as IPEndPoint).Port;
-                    string sendStr = clientIP + ":" + clientPort.ToString() + "--->" + recStr;
-                    //显示内容
-                    txtboxInfo.Dispatcher.BeginInvoke(
+            //        //获取当前客户端的ip地址
+            //        IPAddress clientIP = (clientSocket.RemoteEndPoint as IPEndPoint).Address;
+            //        //获取客户端端口
+            //        int clientPort = (clientSocket.RemoteEndPoint as IPEndPoint).Port;
+            //        string sendStr = clientIP + ":" + clientPort.ToString() + "--->" + recStr;
+            //        //显示内容
+            //        txtboxInfo.Dispatcher.BeginInvoke(
 
-                            new Action(() => { txtboxInfo.Text = $"【接收信息】 {sendStr}\r\n" + txtboxInfo.Text; }), null);
+            //                new Action(() => { txtboxInfo.Text = $"【接收信息】 {sendStr}\r\n" + txtboxInfo.Text; }), null);
 
-                }
-                catch (Exception ex)
-                {
-                    txtboxInfo.Dispatcher.BeginInvoke(
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        txtboxInfo.Dispatcher.BeginInvoke(
 
-                            new Action(() => { txtboxInfo.Text = "\r\n" + $"【信息接收异常】 {ex.Message}\r\n" + txtboxInfo.Text; }), null);
-                    break;
-                }
-            }
+            //                new Action(() => { txtboxInfo.Text = "\r\n" + $"【信息接收异常】 {ex.Message}\r\n" + txtboxInfo.Text; }), null);
+            //        break;
+            //    }
+            //}
 
-            byte[] partialBuffer = null;
-            while (true)
-            {
+            //byte[] partialBuffer = null;
+            //while (true)
+            //{
 
-                try
-                {
-                    byte[] result = new byte[2048];
+            //    try
+            //    {
+            //        byte[] result = new byte[2048];
 
-                    ////通过clientSocket接收数据  
-                    //int receiveNumber = connection.Receive(result);
-                    ////把接受的数据从字节类型转化为字符类型
-                    //string recStr = Encoding.Unicode.GetString(result, 0, receiveNumber);
-
-
-                    int receiveNumber = clientSocket.Receive(result);
-                    byte[] buffer = new byte[receiveNumber];
-                    Buffer.BlockCopy(result, 0, buffer, 0, receiveNumber);
-
-                    if (partialBuffer != null)
-                    {
-                        receiveNumber += partialBuffer.Length;
-                        buffer = partialBuffer.Concat(buffer).ToArray();
-                    }
-
-                    ProtocolHelper.MMO_MemoryStream ms = new ProtocolHelper.MMO_MemoryStream(buffer);
-                    int length = ms.ReadUShort();
-                    ms.Close();
-
-                    if (length < buffer.Length)
-                    {
-                        partialBuffer = buffer;
-                        continue;
-                    }
+            //        ////通过clientSocket接收数据  
+            //        //int receiveNumber = connection.Receive(result);
+            //        ////把接受的数据从字节类型转化为字符类型
+            //        //string recStr = Encoding.Unicode.GetString(result, 0, receiveNumber);
 
 
-                    partialBuffer = null;
-                    byte[] unpackedMsg = ProtocolHelper.UnpackData(buffer);
-                    string recStr = Encoding.Unicode.GetString(unpackedMsg, 0, unpackedMsg.Length);
+            //        int receiveNumber = clientSocket.Receive(result);
+            //        byte[] buffer = new byte[receiveNumber];
+            //        Buffer.BlockCopy(result, 0, buffer, 0, receiveNumber);
+
+            //        if (partialBuffer != null)
+            //        {
+            //            receiveNumber += partialBuffer.Length;
+            //            buffer = partialBuffer.Concat(buffer).ToArray();
+            //        }
+
+            //        ProtocolHelper.MMO_MemoryStream ms = new ProtocolHelper.MMO_MemoryStream(buffer);
+            //        int length = ms.ReadUShort();
+            //        ms.Close();
+
+            //        if (length < buffer.Length)
+            //        {
+            //            partialBuffer = buffer;
+            //            continue;
+            //        }
+
+
+            //        partialBuffer = null;
+            //        //byte[] unpackedMsg = PHelper.UnpackData(buffer,0);
+            //        //string recStr = Encoding.Unicode.GetString(unpackedMsg, 0, unpackedMsg.Length);
 
 
 
-                    //获取当前客户端的ip地址
-                    IPAddress clientIP = (clientSocket.RemoteEndPoint as IPEndPoint).Address;
-                    //获取客户端端口
-                    int clientPort = (clientSocket.RemoteEndPoint as IPEndPoint).Port;
-                    string sendStr = clientIP + ":" + clientPort.ToString() + "--->" + recStr;
-                    //显示内容
-                    txtboxInfo.Dispatcher.BeginInvoke(
+            //        ////获取当前客户端的ip地址
+            //        //IPAddress clientIP = (clientSocket.RemoteEndPoint as IPEndPoint).Address;
+            //        ////获取客户端端口
+            //        //int clientPort = (clientSocket.RemoteEndPoint as IPEndPoint).Port;
+            //        //string sendStr = clientIP + ":" + clientPort.ToString() + "--->" + recStr;
+            //        //显示内容
+            //        //txtboxInfo.Dispatcher.BeginInvoke(
 
-                            new Action(() => { txtboxInfo.Text = $"【接收信息】 {sendStr}\r\n" + txtboxInfo.Text; }), null);
+            //        //        new Action(() => { txtboxInfo.Text = $"【接收信息】 {sendStr}\r\n" + txtboxInfo.Text; }), null);
 
-                }
-                catch (Exception ex)
-                {
-                    // 出现异常，关闭连接
-                    clientSocket.Shutdown(SocketShutdown.Both);
-                    clientSocket.Close();
-                    txtboxInfo.Dispatcher.BeginInvoke(
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        // 出现异常，关闭连接
+            //        clientSocket.Shutdown(SocketShutdown.Both);
+            //        clientSocket.Close();
+            //        txtboxInfo.Dispatcher.BeginInvoke(
 
-                            new Action(() => { txtboxInfo.Text = "\r\n" + $"【信息接收异常】 {ex.Message}\r\n" + txtboxInfo.Text; }), null);
-                    break;
-                }
-            }
+            //                new Action(() => { txtboxInfo.Text = "\r\n" + $"【信息接收异常】 {ex.Message}\r\n" + txtboxInfo.Text; }), null);
+            //        break;
+            //    }
+            //}
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace SocketService
         {
             try
             {
-                IPAddress ip = IPAddress.Parse(txtboxIP.Text);
+                string ip = txtboxIP.Text;
                 int port = Convert.ToInt32(txtboxPort.Text);
 
                 // 如果当前已经存在Socket，则先关闭当前Socket
@@ -147,15 +147,17 @@ namespace SocketService
                 {
                     clientSocket.Close();
                 }
-                
-                clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                clientSocket.Connect(new IPEndPoint(ip, port));
-                txtboxInfo.Text = $"【连接成功】 我方端口 {clientSocket.LocalEndPoint.ToString()}\r\n" + txtboxInfo.Text;
-                Thread th = new Thread(ReceiveMsg)
-                {
-                    IsBackground = true
-                };
-                th.Start();
+
+                clientSocket = new TSocketClient(ip, port);
+
+                //clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                //clientSocket.Connect(new IPEndPoint(ip, port));
+                //txtboxInfo.Text = $"【连接成功】 我方端口 {clientSocket.LocalEndPoint.ToString()}\r\n" + txtboxInfo.Text;
+                //Thread th = new Thread(ReceiveMsg)
+                //{
+                //    IsBackground = true
+                //};
+                //th.Start();
             }
             catch (Exception ex)
             {
@@ -178,8 +180,8 @@ namespace SocketService
 
                 
                 txtboxInfo.Text = $"【发送消息】 {message}\r\n" + txtboxInfo.Text;
-                buffer = ProtocolHelper.PackData(buffer);
-                clientSocket.Send(buffer);
+                //buffer = ProtocolHelper.PackData(buffer);
+                //clientSocket.Send(buffer);
 
                 //for (int i = 0; i < 100; i++)
                 //{

@@ -55,9 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MMO_MemoryStream.cs" />
     <Compile Include="SocketHelper.cs" />
+    <Compile Include="StoreHeap.cs" />
     <Compile Include="TCPListener.cs" />
     <Compile Include="TSocketBase.cs" />
+    <Compile Include="TSocketClient.cs" />
     <Compile Include="TSocketMessage.cs" />
     <Page Include="Client.xaml">
       <Generator>MSBuild:Compile</Generator>
