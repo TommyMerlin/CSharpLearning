@@ -38,8 +38,10 @@ namespace DependencyLearning
         {
             base.OnClick();
 
-            ReportTimeEventArgs args = new ReportTimeEventArgs(ReportTimeEvent, this);
-            args.ClickTime = DateTime.Now;
+            ReportTimeEventArgs args = new ReportTimeEventArgs(ReportTimeEvent, this)
+            {
+                ClickTime = DateTime.Now
+            };
             this.RaiseEvent(args);
         }
 

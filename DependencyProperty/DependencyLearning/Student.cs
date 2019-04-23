@@ -17,6 +17,7 @@ namespace DependencyLearning
 {
     public class Student : DependencyObject
     {
+        /**
         public static readonly DependencyProperty NameProperty = 
             DependencyProperty.Register("Name", typeof(string), typeof(Student));
 
@@ -39,6 +40,13 @@ namespace DependencyLearning
 
         public static readonly DependencyProperty AgeProperty =
             DependencyProperty.Register("Age", typeof(int), typeof(Student),new PropertyMetadata(10));
+        **/
+
+        public static readonly RoutedEvent NameChangedEvent =
+            EventManager.RegisterRoutedEvent("NameChanged", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Student));
+
+        public int Id;
+        public string Name;
     }
 
     public class School : DependencyObject

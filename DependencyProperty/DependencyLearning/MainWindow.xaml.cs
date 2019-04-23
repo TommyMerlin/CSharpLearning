@@ -31,7 +31,14 @@ namespace DependencyLearning
             //txtbox2.SetBinding(TextBox.TextProperty, new Binding("Name") { Source = stu });
 
             //this.gridRoot.AddHandler(Button.ClickEvent, new RoutedEventHandler(this.ButtonClicked));
-            this.btnOK.AddHandler(Button.ClickEvent, new RoutedEventHandler(ButtonClicked));
+            //this.btnOK.AddHandler(Button.ClickEvent, new RoutedEventHandler(ButtonClicked));
+
+            gridRoot.AddHandler(Student.NameChangedEvent, new RoutedEventHandler(StudentNamechangedHandler));
+        }
+
+        public void StudentNamechangedHandler(object sender,RoutedEventArgs e)
+        {
+            MessageBox.Show((e.OriginalSource as Student).Id.ToString());
         }
 
         private void ButtonClicked(object sender, RoutedEventArgs e)
@@ -52,6 +59,24 @@ namespace DependencyLearning
             string time = e.ClickTime.ToLongTimeString();
             string content = $"{time} 到达 {element.Name}";
             this.lbox.Items.Add(content);
+        }
+
+        private void Date_button_ReportDate(object sender, ReportDateEventArgs e)
+        {
+            FrameworkElement element = sender as FrameworkElement;
+            string content = $"到达{element.Name}:{e.ClickDate.ToLongDateString()}";
+            lbox.Items.Add(content);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Student stu = new Student()
+            {
+                Name = "Tim",
+                Id = 101
+            };
+            RoutedEventArgs arg = new RoutedEventArgs(Student.NameChangedEvent, stu);
+            btn1.RaiseEvent(arg);
         }
 
         //private void Button_Click(object sender, RoutedEventArgs e)

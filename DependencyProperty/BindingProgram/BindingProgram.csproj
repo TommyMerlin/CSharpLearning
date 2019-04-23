@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{31AB3319-0F38-4E2B-BB69-7B0B112E8B4B}</ProjectGuid>
+    <ProjectGuid>{7D25F5DE-F163-4199-B105-75FF80D15F7A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DependencyLearning</RootNamespace>
-    <AssemblyName>DependencyLearning</AssemblyName>
+    <RootNamespace>BindingProgram</RootNamespace>
+    <AssemblyName>BindingProgram</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,9 +54,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Class1.cs" />
-    <Compile Include="RoutedEventLearn.cs" />
-    <Compile Include="Student.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

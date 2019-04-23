@@ -1,0 +1,15 @@
+﻿<Window x:Class="BindingProgram.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BindingProgram"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="gridRoot">
+        <StackPanel>
+            <TextBox x:Name="txtboxName" Margin="20" Width="400" FontSize="20" TextAlignment="Center"></TextBox>
+            <Button x:Name="btnChangeName" FontSize="20" Width="150" Click="BtnChangeName_Click">Change Name</Button>
+        </StackPanel>
+    </Grid>
+</Window>

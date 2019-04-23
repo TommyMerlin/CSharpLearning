@@ -13,14 +13,23 @@
             <Setter Property="Width" Value="200"/>
             <Setter Property="FontSize" Value="20"/>
         </Style>
+        <Style TargetType="{x:Type local:DateButton}">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
+        <Style TargetType="{x:Type local:TimeButton}">
+            <Setter Property="Margin" Value="10 0 10 10"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
     </Window.Resources>
     <Grid x:Name="gridRoot" Button.Click="GridRoot_Click" local:TimeButton.ReportTime="ReportTimeEventHandler">
         <StackPanel x:Name="stack1" local:TimeButton.ReportTime="ReportTimeEventHandler" Margin="10">
             <!--<TextBox Name="txtbox1" Margin="5 20 5 10"></TextBox>-->
             <!--<TextBox Name="txtbox2"></TextBox>-->
             <ListBox x:Name="lbox" Height="100" Margin="10 0"></ListBox>
-            <Button x:Name="btnOK" Width="50" Margin="10" FontSize="15">OK</Button>
-            <local:TimeButton x:Name="custom_button" Width="50" local:TimeButton.ReportTime="ReportTimeEventHandler">Button</local:TimeButton>
+            <local:DateButton x:Name="date_button" local:DateButton.ReportDate="Date_button_ReportDate">DateButton</local:DateButton>
+            <local:TimeButton x:Name="custom_button" local:TimeButton.ReportTime="ReportTimeEventHandler">TimeButton</local:TimeButton>
+            <Button x:Name="btn1" Width="100" Click="Button_Click">Button</Button>
         </StackPanel>
     </Grid>
 </Window>
