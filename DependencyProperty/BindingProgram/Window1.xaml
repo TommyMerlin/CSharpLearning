@@ -6,10 +6,33 @@
         xmlns:local="clr-namespace:BindingProgram"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
+    <Window.Resources>
+        <local:Category2SourceConverter x:Key="c2s"/>
+        <local:State2NullableBoolConverer x:Key="s2n"/>
+    </Window.Resources>
     <Grid>
         <StackPanel>
-            <TextBox x:Name="txtbox1" FontSize="20" Width="200" Margin="20"/>
-            <Slider x:Name="slider1" Maximum="110" Width="400"/>
+            <StackPanel>
+                <TextBox x:Name="txtbox1" FontSize="20" Width="200" Margin="20"/>
+                <Slider x:Name="slider1" Maximum="110" Width="400"/>
+            </StackPanel>
+            <StackPanel>
+                <ListBox x:Name="lbBrowser" Height="250" Margin="20 20 20 0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Width="30" Height="30" Source="{Binding Path=cate,Converter={StaticResource c2s}}"/>
+                                <TextBlock Width="50" VerticalAlignment="Center" Margin="40 0" Text="{Binding Path=name}"/>
+                                <CheckBox IsThreeState="True" VerticalAlignment="Center" IsChecked="{Binding Path=state,Converter={StaticResource s2n}}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btnLoad" Click="BtnLoad_Click" Margin="20 10 20 20" FontSize="18">Load</Button>
+                    <Button x:Name="btnSave" Click="BtnSave_Click" Margin="20 10 20 20" FontSize="20">Save</Button>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

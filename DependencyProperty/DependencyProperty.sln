@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyLearning", "Depen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingProgram", "BindingProgram\BindingProgram.csproj", "{7D25F5DE-F163-4199-B105-75FF80D15F7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{3011FCCC-3CAE-4ED9-8E1A-C7DA534CA348}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7D25F5DE-F163-4199-B105-75FF80D15F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D25F5DE-F163-4199-B105-75FF80D15F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D25F5DE-F163-4199-B105-75FF80D15F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3011FCCC-3CAE-4ED9-8E1A-C7DA534CA348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3011FCCC-3CAE-4ED9-8E1A-C7DA534CA348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3011FCCC-3CAE-4ED9-8E1A-C7DA534CA348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3011FCCC-3CAE-4ED9-8E1A-C7DA534CA348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

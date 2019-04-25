@@ -28,7 +28,7 @@ namespace BindingProgram
                 name = value;
                 if(PropertyChanged != null)
                 {
-                    this.PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Name"));
+                    this.PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Value"));
                 }
             }
         }
