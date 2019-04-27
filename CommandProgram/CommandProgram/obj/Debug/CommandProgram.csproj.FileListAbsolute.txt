@@ -1,0 +1,15 @@
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\bin\Debug\CommandProgram.exe.config
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\bin\Debug\CommandProgram.exe
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\bin\Debug\CommandProgram.pdb
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\CommandProgram.csprojAssemblyReference.cache
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\MainWindow.g.cs
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\App.g.cs
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\CommandProgram_MarkupCompile.cache
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\CommandProgram_MarkupCompile.lref
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\MainWindow.baml
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\CommandProgram.g.resources
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\CommandProgram.Properties.Resources.resources
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\CommandProgram.csproj.GenerateResource.cache
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\CommandProgram.csproj.CoreCompileInputs.cache
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\CommandProgram.exe
+C:\Users\7ommy\source\repos\CommandProgram\CommandProgram\obj\Debug\CommandProgram.pdb

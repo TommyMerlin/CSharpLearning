@@ -7,6 +7,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl Margin="10 10 10 0">
+            <TabItem Header="ListBox">
+                <StackPanel Margin="5">
+                    <ListBox x:Name="lbox" Margin="10" Height="300">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Width="100" Text="{Binding Name}"/>
+                                    <TextBlock Width="100" Text="{Binding Age}"/>
+                                    <TextBlock Width="100" Text="{Binding ID}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button x:Name="btn1" Click="Btn1_Click" Margin="10" Width="70" FontSize ="20" Padding="5">Click</Button>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="DataGrid">
+                <StackPanel Margin="10">
+                    <DataGrid x:Name="grid1" AutoGenerateColumns="False" Height="300">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="姓名" Width="100" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="年龄" Width="100" Binding="{Binding Age}"/>
+                            <DataGridTextColumn Header="ID" Width="100" Binding="{Binding ID}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btn2" Click="Btn1_Click" Margin="10" Width="70" FontSize ="20" Padding="5">Click</Button>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
