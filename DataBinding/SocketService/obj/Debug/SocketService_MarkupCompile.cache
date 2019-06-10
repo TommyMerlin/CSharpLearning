@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\SocketService\obj\Debug\
+F:\GitHub\CSharpLearning\DataBinding\SocketService\obj\Debug\
 SocketService
 none
 false
 DEBUG;TRACE
-C:\Users\7ommy\source\repos\CSharpLearning\DataBinding\SocketService\App.xaml
+F:\GitHub\CSharpLearning\DataBinding\SocketService\App.xaml
 2967144479
 
 14-740224410
 131569487696
 Client.xaml;Server.xaml;
 
-False
+True
 
