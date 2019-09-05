@@ -90,12 +90,26 @@ namespace Practise1
             }
         }
 
+        public static void PrintOut(int n)
+        {
+            if (n >= 10)
+            {
+                PrintOut(n / 10);
+            }
+            else
+            {
+                PrintDigit(n % 10);
+            }
+        }
+
+        public static void PrintDigit(int n)
+        {
+            Console.WriteLine(n);
+        }
+
         static void Main(string[] args)
         {
-            ChildClass c1 = new ChildClass();
-            ChildClass c2 = new ChildClass(13, "ZJU");
-            Console.WriteLine($"{c1.Name}:{c1.Age} {c1.Height}");
-            Console.WriteLine($"{c2.Name}:{c2.Age} {c2.Height}");
+            PrintOut(100);
 
             Console.Read();
         }
